@@ -38,7 +38,7 @@ const Header = () => {
                         <LogoImage src="/logo.png" alt="Logo" />
                         <LogoTitle>
                             <div>
-                                <span>air</span>Climat
+                                <span>air</span>Clining
                             </div>
                             <div>Ремонт кондиционеров</div>
                         </LogoTitle>

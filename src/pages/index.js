@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      {/* <Advantages /> */}
+      <Advantages />
       <Footer />
     </>
   )

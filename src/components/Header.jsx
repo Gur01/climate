@@ -80,7 +80,7 @@ const Header = () => {
 
                             <LeftSide>
                                 <LeftSideInner>
-                                    <HeaderTitle>Обслуживание кондиционеров <br />от <span>профессионалов</span></HeaderTitle>
+                                    <HeaderTitle>Клининговые услуги <br />от <span>профессионалов</span></HeaderTitle>
                                     <HeaderSubTitle>Противоположная точка зрения подразумевает, что тщательные исследования конкурентов объединены в целые кластеры себе подобных.</HeaderSubTitle>
                                     <Button>Заказать звонок</Button>
                                 </LeftSideInner>
@@ -169,6 +169,7 @@ const LeftSide = styled.div`
     flex-direction: column;
 	justify-content: center;
 	align-items: center;
+    height: 100%;
 `
 
 const LeftSideInner = styled.div`

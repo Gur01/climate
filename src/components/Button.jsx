@@ -19,5 +19,6 @@ const StyledButton = styled.button`
 	outline: none;
     font-size: 16px;
     cursor: pointer;
+    white-space: nowrap
 `;
 

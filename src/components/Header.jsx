@@ -57,7 +57,6 @@ const Header = () => {
                 spaceBetween={0}
                 slidesPerView={1}
                 navigation
-                scrollbar={{ draggable: false }}
                 speed={600}
             >
                 <SwiperSlide>
@@ -202,7 +201,7 @@ const RightSide = styled.div`
     overflow: hidden;
     background-size: cover;
     background-position: center;
-    background-image: linear-gradient(to top, rgba(44, 77, 195, 0.3), rgba(44, 77, 195, 0.3)), url('/montag1.png');
+    background-image: linear-gradient(to top, rgba(44, 77, 195, 0.3), rgba(44, 77, 195, 0.3)), url('/images/montag1.png');
     position: relative;
 `
 

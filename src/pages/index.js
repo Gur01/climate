@@ -3,6 +3,8 @@ import Image from 'next/image'
 // import styles from '../styles/Home.module.css'
 import Header from '../components/Header';
 import Advantages from '../components/Advantages';
+import Services from '../components/Services';
+import Feedback from '../components/Feedback';
 import Footer from '../components/Footer';
 
 export default function Home() {
@@ -10,6 +12,8 @@ export default function Home() {
     <>
       <Header />
       <Advantages />
+      <Services />
+      <Feedback />
       <Footer />
     </>
   )

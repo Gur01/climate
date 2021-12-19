@@ -1,9 +1,8 @@
-import Container from './Container';
-import Layout from './Layout';
-import Section from './Section';
-import Title from './Title';
+import Container from '../elements/Container';
+import Layout from '../elements/Layout';
+import Section from '../elements/Section';
+import Title from '../elements/Title';
 import styled from 'styled-components';
-
 
 const Advantages = ({ children, ...props }) => {
     return (

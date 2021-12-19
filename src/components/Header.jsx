@@ -6,9 +6,9 @@ import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useClickOutside } from '../hooks/useClickOutside';
-import Button from './Button';
-import Container from './Container';
-import Divider from './Divider';
+import Button from '../elements/Button';
+import Container from '../elements/Container';
+import Divider from '../elements/Divider';
 
 SwiperCore.use([Nav]);
 

@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import Section from './Section';
-import Title from './Title';
-import Container from './Container';
-import Divider from './Divider';
-import AdvantagesCard from './AdvantagesCard';
-import Group from './Group';
-import Banner from './Banner';
+import Section from '../elements/Section';
+import Title from '../elements/Title';
+import Container from '../elements/Container';
+import Divider from '../elements/Divider';
+import AdvantagesCard from '../elements/AdvantagesCard';
+import Group from '../elements/Group';
+import Banner from '../elements/Banner';
 
 const Advantages = ({ children, ...props }) => {
     return (

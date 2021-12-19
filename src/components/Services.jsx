@@ -3,10 +3,10 @@ import "swiper/css";
 import "swiper/css/navigation";
 import 'swiper/css/scrollbar';
 import { Swiper, SwiperSlide } from "swiper/react";
-import Container from './Container';
-import Section from './Section';
-import ServicesCard from './ServicesCard'
-import Title from './Title';
+import Container from '../elements/Container';
+import Section from '../elements/Section';
+import ServicesCard from '../elements/ServicesCard'
+import Title from '../elements/Title';
 import styled from 'styled-components';
 
 SwiperCore.use([Navigation, Scrollbar]);

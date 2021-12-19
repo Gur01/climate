@@ -12,6 +12,7 @@ export default Title;
 
 const StyledTitle = styled.h3`
     font-size: 40px;
+    font-weight: normal;
     
     span {
         text-decoration: underline;

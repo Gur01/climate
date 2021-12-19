@@ -6,6 +6,7 @@ import Advantages from '../components/Advantages';
 import Services from '../components/Services';
 import Feedback from '../components/Feedback';
 import Footer from '../components/Footer';
+import About from '../components/About';
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Advantages />
       <Services />
       <Feedback />
+      <About />
       <Footer />
     </>
   )

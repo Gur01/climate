@@ -19,7 +19,7 @@ const Services = ({ children, ...props }) => {
 
                 <StyledSwiper
                     modules={[Scrollbar]}
-                    slidesPerView={3}
+                    slidesPerView='auto'
                     spaceBetween={16}
                     loop={true}
                     pagination={{
@@ -43,43 +43,47 @@ export default Services;
 
 
 const StyledSwiper = styled(Swiper)`
-.swiper-scrollbar {
-    bottom: 0;
-    right: 206px;
-    width: 155px;
-    left: unset;
-    height: 1px;
-    background-color: #9F9F9F;
-    top: unset;
-    
-    .swiper-scrollbar-drag {
-        background-color: #0F0F10;
+    .swiper-slide {
+        width: 30%;
     }
-}
 
-.swiper-button-prev {
-    right: 415px;
-    bottom: -20px;
-    left: unset;
-    top: unset;
-
-    &:after {
-        font-size: 16px;
-        color: #0F0F10;
-        content: 'Назад';    
+    .swiper-scrollbar {
+        bottom: 0;
+        right: 206px;
+        width: 155px;
+        left: unset;
+        height: 1px;
+        background-color: #9F9F9F;
+        top: unset;
+        
+        .swiper-scrollbar-drag {
+            background-color: #0F0F10;
+        }
     }
-}
 
-.swiper-button-next {
-    right: 130px;
-    bottom: -20px;
-    left: unset;
-    top: unset;
-    
-    &:after {
-        content: 'Вперед';
-        font-size: 16px;
-        color: #0F0F10;
+    .swiper-button-prev {
+        right: 415px;
+        bottom: -20px;
+        left: unset;
+        top: unset;
+
+        &:after {
+            font-size: 16px;
+            color: #0F0F10;
+            content: 'Назад';    
+        }
     }
-}
+
+    .swiper-button-next {
+        right: 130px;
+        bottom: -20px;
+        left: unset;
+        top: unset;
+        
+        &:after {
+            content: 'Вперед';
+            font-size: 16px;
+            color: #0F0F10;
+        }
+    }
 `

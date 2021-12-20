@@ -9,6 +9,7 @@ import { useClickOutside } from '../hooks/useClickOutside';
 import Button from '../elements/Button';
 import Container from '../elements/Container';
 import Divider from '../elements/Divider';
+import Logo from '../elements/Logo';
 
 SwiperCore.use([Nav]);
 
@@ -34,16 +35,7 @@ const Header = () => {
         <StyledHeader>
             <HeaderTop>
                 <StyledContainer>
-                    <Logo>
-                        <LogoImage src="/logo.png" alt="Logo" />
-                        <LogoTitle>
-                            <div>
-                                <span>air</span>Clining
-                            </div>
-                            <div>Ремонт кондиционеров</div>
-                        </LogoTitle>
-
-                    </Logo>
+                    <Logo />
 
                     <Hamburger onClick={handleHamburger} isOpenHamburger={isOpenHamburger} ref={buttonRef} >
                         <span></span>
@@ -211,43 +203,6 @@ const HeaderBottom = styled.div`
     left: 0;
     right: 0;
 `
-
-const Logo = styled.div`
-    display: flex;
-    align-items: center;
-
-`
-
-const LogoImage = styled.img`
-    margin-right: 17px;
-
-`
-
-const LogoTitle = styled.div`
-    color: #fff;
-    
-    > div:first-child {
-        font-size: 18px;
-        font-family: inherit;
-
-        span {
-            color: #FFD337
-            
-        }
-    }
-    
-    > div:last-child {
-        font-family: inherit;
-        font-size: 12px;
-        font-weight: 400;
-    }
-`
-
-const LogoSubTitle = styled.div`
-
-`
-
-
 
 const Hamburger = styled.div`
     border: 2px solid #C4C4C4;

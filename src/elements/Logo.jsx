@@ -1,0 +1,52 @@
+import styled from 'styled-components';
+
+const Logo = () => {
+    return (
+        <StyledLogo>
+            <LogoImage src="/logo.png" alt="Logo" />
+            <LogoTitle>
+                <div>
+                    <span>air</span>Сleaning
+                </div>
+                <div>Ремонт кондиционеров</div>
+            </LogoTitle>
+        </StyledLogo>
+    )
+}
+
+export default Logo;
+
+const StyledLogo = styled.div`
+    display: flex;
+    align-items: center;
+
+`
+
+const LogoImage = styled.img`
+    margin-right: 17px;
+
+`
+
+const LogoTitle = styled.div`
+    color: #fff;
+    
+    > div:first-child {
+        font-size: 18px;
+        font-family: inherit;
+
+        span {
+            color: #FFD337
+            
+        }
+    }
+    
+    > div:last-child {
+        font-family: inherit;
+        font-size: 12px;
+        font-weight: 400;
+        color: #9F9F9F;
+    }
+`
+
+
+

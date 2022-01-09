@@ -34,6 +34,7 @@ const Title = styled.div`
 
 const Description = styled.div`
     color: #CBD2F0;
+    line-height: 24px;
 `;
 
 

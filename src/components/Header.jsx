@@ -1,17 +1,14 @@
 import { useRef, useState } from 'react';
 import styled from 'styled-components';
-import SwiperCore, { Navigation as Nav, Scrollbar } from 'swiper';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/scrollbar';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { useClickOutside } from '../hooks/useClickOutside';
+import { SwiperSlide } from 'swiper/react';
 import Button from '../elements/Button';
 import Container from '../elements/Container';
 import Divider from '../elements/Divider';
 import Logo from '../elements/Logo';
-
-SwiperCore.use([Nav]);
+import CustomSwiper from './CustomSwiper';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/scrollbar';
 
 const Header = () => {
     const [isOpenHamburger, setOpenHamburger] = useState(false);
@@ -19,11 +16,10 @@ const Header = () => {
     const navRef = useRef(null);
     const buttonRef = useRef(null);
 
-
-    useClickOutside(navRef, (e) => {
-        e.stopPropagation();
-        setOpenHamburger(false);
-    }, buttonRef)
+    // useClickOutside(navRef, (e) => {
+    //     e.stopPropagation();
+    //     setOpenHamburger(false);
+    // }, buttonRef)
 
     const handleHamburger = (e) => {
         console.log('handle');
@@ -42,15 +38,20 @@ const Header = () => {
                     </Hamburger>
 
                 </StyledContainer>
+
             </HeaderTop>
 
-            <StyledSwiper
-                modules={[Scrollbar]}
-                spaceBetween={0}
-                slidesPerView={1}
-                navigation
-                speed={600}
-            >
+            <CustomSwiper 
+                delay={0} 
+                navigation={{
+                    prevEl: '.prev',
+                    nextEl: '.next',
+                }}
+                scrollbar={{
+                    hide: false,
+                    el: '.scrollbar',
+                    draggable: false,
+                }}>
                 <SwiperSlide>
                     <HeaderCard>
                         <Divider blocks={2}>
@@ -94,13 +95,38 @@ const Header = () => {
                         </Divider>
                     </HeaderCard>
                 </SwiperSlide>
-            </StyledSwiper>
+                <SwiperSlide>
+                    <HeaderCard>
+                        <Divider blocks={2}>
+                            <LeftSide>
+                                <LeftSideInner>
+                                    <HeaderTitle>Обслуживание кондиционеров <br />от <span>профессионалов</span></HeaderTitle>
+                                    <HeaderSubTitle>Противоположная точка зрения подразумевает, что тщательные исследования конкурентов объединены в целые кластеры себе подобных.</HeaderSubTitle>
+                                    <Button>Заказать звонок</Button>
+                                </LeftSideInner>
+                            </LeftSide>
+                            <RightSide></RightSide>
+                        </Divider>
+                    </HeaderCard>
+                </SwiperSlide>
+            </CustomSwiper>
 
 
             <HeaderBottom>
                 <Container>
-                    <Phone>+7 000 000 00 00</Phone>
-                    <SubPhone>с 10 до 22, без выходных</SubPhone>
+                    <Divider blocks={2}>
+                        <div>
+                            <Phone>+7 000 000 00 00</Phone>
+                            <SubPhone>с 10 до 22, без выходных</SubPhone>
+                        </div>
+
+                        <SwiperNavigation>
+                            <div className='prev'>Назад</div>
+                            <div className='scrollbar'></div>
+                            <div className='next'>Вперед</div>
+                        </SwiperNavigation>
+
+                    </Divider>
                 </Container>
             </HeaderBottom>
 
@@ -134,7 +160,7 @@ const HeaderTop = styled.div`
     position: absolute ;
     left: 0;
     right: 0;
-    padding: 16px 0;
+    padding: 25px 0;
     /* background-color: #2C4DC3; */
     z-index: 150;
 `
@@ -143,8 +169,6 @@ const StyledContainer = styled(Container)`
     display: flex;
     justify-content: space-between;
 `
-
-
 
 const HeaderCard = styled.div`
     width: 100%;
@@ -172,7 +196,10 @@ const HeaderTitle = styled.h1`
     font-size: 50px;
     color: #fff;
     font-weight: 400;
-    line-height: 57,5px;
+    line-height: 57.5px;
+    letter-spacing: 2.1px;
+    margin-bottom: 20px;
+
 
     span {
         text-decoration: underline;
@@ -278,67 +305,55 @@ const Navigation = styled.div`
     }
 `;
 
-const StyledSwiper = styled(Swiper)`
-    height: 100%;
-    width: 100%;
-    z-index: unset !important;
-    
-    .swiper-wrapper {
-        z-index: unset !important;
-    }
-    
-    .swiper-slide {
-        z-index: unset !important;
+const Phone = styled.div`
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 10px;
+
+`
+
+const SubPhone = styled.div`
+    font-size: 12px;
+    color: #D6DDF3;
+`
+
+const SwiperNavigation = styled.div`
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+
+    .prev,
+    .next {
+        color: #fff;
+        cursor: pointer;
+        font-size: 16px;
+        user-select: none;
+
+        &.swiper-button-disabled {
+            opacity: .35;
+            cursor: auto;
+            pointer-events: none;
+        }
     }
 
-    .swiper-scrollbar {
-        bottom: 32px;
-        right: 206px;
-        width: 155px;
-        left: unset;
+    .prev {
+        margin-right: 24px;
+    }
+
+    .next {
+        margin-left: 24px;
+    }
+
+    .scrollbar {
         height: 1px;
         background-color:#a7b5cf;
-        top: unset;
+        width: 155px;
+        position: relative;
+        margin-top: 8px;
         
         .swiper-scrollbar-drag {
             background-color:#fff;
         }
     }
 
-    .swiper-button-prev {
-        right: 415px;
-        bottom: 12px;
-        left: unset;
-        top: unset;
-    
-        &:after {
-            font-size: 16px;
-            color: #fff;
-            content: 'Назад';    
-        }
-    }
-    
-    .swiper-button-next {
-        right: 130px;
-        bottom: 12px;
-        left: unset;
-        top: unset;
-        
-        &:after {
-            content: 'Вперед';
-            font-size: 16px;
-            color: #fff;
-        }
-    }
-`
-
-const Phone = styled.div`
-    font-size: 20px;
-    color: #fff;
-
-
-`
-const SubPhone = styled.div`
-    font-size: 12px;
-    color: #D6DDF3
 `

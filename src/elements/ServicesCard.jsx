@@ -22,7 +22,7 @@ const Title = styled.div`
     margin-bottom: 25px;
     color: #2C4DC3;
     display: flex;
-    justify-content: center;
+    letter-spacing: 1px;
 `;
 
 const Description = styled.p`
@@ -33,10 +33,11 @@ const Description = styled.p`
     display: flex;
     justify-content: center;
     width: 80%;
+    letter-spacing: 0.3px;
 `;
 
 const TextBlock = styled.div`
-    padding: 40px;
+    padding: 45px;
 
 `
 

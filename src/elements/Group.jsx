@@ -16,7 +16,14 @@ const StyledGroup = styled.div`
     width: 100%;
 
     > *:not(:last-child) {
-        ${({type})=> type === "vertical" ? 'margin-bottom: 60px;' : 'margin-right: 16px;'}
+        ${({type})=> type === "vertical" ? 'margin-bottom: 40px;' : 'margin-right: 16px;'}
     }
+    
+    @media screen and (min-width: 1024px) {
+        > *:not(:last-child) {
+            ${({type})=> type === "vertical" ? 'margin-bottom: 60px;' : 'margin-right: 16px;'}
+        }
+    }
+
 `;
 

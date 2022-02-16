@@ -20,6 +20,7 @@ const StyledLogo = styled.div`
     display: flex;
     align-items: center;
 
+
 `
 
 const LogoImage = styled.img`

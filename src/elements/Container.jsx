@@ -9,7 +9,9 @@ const Container = ({ children, className }) => {
 export default Container;
 
 const StyledContainer = styled.div`
-    width: 1230px;
+    max-width: 1250px;
+    width: 100%;
+    padding: 0 20px;
     margin: 0 auto;
     /* border: 1px solid grey; */
     position: relative;

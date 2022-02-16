@@ -29,13 +29,4 @@ export default CustomSwiper;
 const StyledSwiper = styled(Swiper)`
     height: 100%;
     width: 100%;
-    z-index: unset !important;
-    
-    .swiper-wrapper {
-        z-index: unset !important;
-    }
-    
-    .swiper-slide {
-        z-index: unset !important;
-    }
 `

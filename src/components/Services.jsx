@@ -16,13 +16,24 @@ const Services = ({ children, ...props }) => {
                     spaceBetween={16}
                     slidesPerView={3}
                     navigation={{
-                        prevEl: '.prev-servises',
-                        nextEl: '.next-servises',
+                        prevEl: '.services-prev',
+                        nextEl: '.services-next',
                     }}
                     scrollbar={{
                         hide: false,
-                        el: '.scrollbar-servises',
+                        el: '.services-scrollbar',
                         draggable: false,
+                    }}
+                    breakpoints = {{
+                        320: {
+                          slidesPerView: 1,
+                        },
+                        540: {
+                          slidesPerView: 2,
+                        },
+                        1024: {
+                          slidesPerView: 3,
+                        }
                     }}
                 >
                     <SwiperSlide><ServicesCard /></SwiperSlide>
@@ -30,7 +41,7 @@ const Services = ({ children, ...props }) => {
                     <SwiperSlide><ServicesCard /></SwiperSlide>
                     <SwiperSlide><ServicesCard /></SwiperSlide>
                 </CustomSwiper>
-                <SwiperNavigation theme="white" />
+                <SwiperNavigation theme="white" className='services'/>
             </Container>
         </Section>
     )

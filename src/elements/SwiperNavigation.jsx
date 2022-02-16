@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-const SwiperNavigation = ({theme = 'black'}) => {
+const SwiperNavigation = ({theme = 'black', className}) => {
     return (
         <Navigation theme={theme}>
-            <div className='prev'>Назад</div>
-            <div className='scrollbar'></div>
-            <div className='next'>Вперед</div>
+            <div className={`${className}-prev prev`}>Назад</div>
+            <div className={`${className}-scrollbar scrollbar`}></div>
+            <div className={`${className}-next next`}>Назад</div>
         </Navigation>
     )
 }
@@ -33,10 +33,37 @@ const Navigation = styled.div`
 
     .prev {
         margin-right: 24px;
-    }
 
+        /* &:after {
+            content: 'Назад';
+            display: inline-block;
+        } */
+    }
+    
     .next {
         margin-left: 24px;
+
+        /* &:after {
+            content: 'Вперед';
+            display: inline-block;
+        } */
+    }
+
+    @media screen and (min-width: 1024px) {
+        .prev {
+
+        /* &:after {
+            content: 'Назад';
+            display: inline-block;
+        } */
+    }
+    
+    .next {
+        /* &:after {
+            content: 'Вперед';
+            display: inline-block;
+        } */
+    }
     }
 
     .scrollbar {
@@ -45,10 +72,16 @@ const Navigation = styled.div`
         width: 155px;
         position: relative;
         margin-top: 8px;
+        display: none;
         
         .swiper-scrollbar-drag {
-            background-color:#fff;
+            background-color: ${({theme}) => theme === 'black' ?'#fff' : '#0F0F10'};
+            
         }
+        
+        @media screen and (min-width: 1024px) {
+            display: block;
+    }
     }
 
 `

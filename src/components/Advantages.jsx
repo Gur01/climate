@@ -11,23 +11,21 @@ const Advantages = ({ children, ...props }) => {
     return (
         <Section>
             <Container>
-                <Group>
-                    <Divider blocks={2}>
-                        <Title>Наши <span>преимущества</span></Title>
-                        <p>Явные признаки победы институционализации разоблачены.
-                            Идейные соображения высшего порядка, а также современная методология разработки не даёт нам.</p>
-                    </Divider>
+                <StyledGroup>
+                    <AdvantagesTitle>
+                        <StyledTitle>Наши <span>преимущества</span></StyledTitle>
+                        <TitleDescription>Явные признаки победы институционализации разоблачены.
+                            Идейные соображения высшего порядка, а также современная методология разработки не даёт нам.</TitleDescription>
+                    </AdvantagesTitle>
 
-                    <Divider blocks={4}>
-                        <Group type="hotizontal">
+                    <AdvantagesGroup>
                             <AdvantagesCard />
                             <AdvantagesCard />
                             <AdvantagesCard />
-                            <AdvantagesCard />                        
-                        </Group>   
-                    </Divider>
-                    
-                </Group>
+                            <AdvantagesCard />
+                    </AdvantagesGroup>
+
+                </StyledGroup>
                 <Banner />
             </Container>
 
@@ -36,5 +34,59 @@ const Advantages = ({ children, ...props }) => {
 }
 
 export default Advantages;
+
+const StyledGroup = styled(Group)`
+display: block;
+
+/* > * {
+    width: 100%;
+
+    @media screen and (min-width: 1024px) {
+        width: 50%;
+    }
+} */
+`
+
+const StyledTitle = styled(Title)`
+    margin-bottom: 25px;
+
+    @media screen and (min-width: 1024px) {
+        margin-bottom: 0;
+    }
+    
+`
+
+const AdvantagesGroup = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+    
+    
+    @media screen and (min-width: 1024px) {
+        flex-wrap: nowrap;
+        margin-bottom: 25px;
+    }
+    
+`
+
+const TitleDescription = styled.p`
+    
+`
+
+const AdvantagesTitle = styled.div`
+    display: block;
+
+    @media screen and (min-width: 1024px) {
+        display: flex;
+    }
+    
+    > * {
+        width: 100%;
+        
+        @media screen and (min-width: 1024px) {
+            width: 50%;
+        }
+    }
+`
 
 

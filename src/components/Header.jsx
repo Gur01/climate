@@ -5,30 +5,45 @@ import Button from '../elements/Button';
 import Container from '../elements/Container';
 import Divider from '../elements/Divider';
 import Logo from '../elements/Logo';
+import SwiperNavigation from '../elements/SwiperNavigation';
 import CustomSwiper from './CustomSwiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
+import { useClickOutside } from '../hooks/useClickOutside'
 
 const Header = () => {
     const [isOpenHamburger, setOpenHamburger] = useState(false);
 
     const navRef = useRef(null);
     const buttonRef = useRef(null);
+    const headerRef = useRef(null);
+
 
     // useClickOutside(navRef, (e) => {
     //     e.stopPropagation();
+
+    //     const body = document.body;
+    //     body.style.overflowY = 'auto';
+
     //     setOpenHamburger(false);
     // }, buttonRef)
 
     const handleHamburger = (e) => {
-        console.log('handle');
         e.stopPropagation();
+        const body = document.body;
+
+        if (!isOpenHamburger) {
+            body.style.overflowY = 'hidden';
+        } else {
+            body.style.overflowY = 'auto';
+        }
+
         setOpenHamburger(!isOpenHamburger)
     }
 
     return (
-        <StyledHeader>
+        <StyledHeader ref={headerRef}>
             <HeaderTop>
                 <StyledContainer>
                     <Logo />
@@ -38,78 +53,65 @@ const Header = () => {
                     </Hamburger>
 
                 </StyledContainer>
-
             </HeaderTop>
 
-            <CustomSwiper 
-                delay={0} 
+            <CustomSwiper
+                delay={0}
                 navigation={{
-                    prevEl: '.prev',
-                    nextEl: '.next',
+                    prevEl: '.header-prev',
+                    nextEl: '.header-next',
                 }}
                 scrollbar={{
                     hide: false,
-                    el: '.scrollbar',
+                    el: '.header-scrollbar',
                     draggable: false,
                 }}>
                 <SwiperSlide>
-                    <HeaderCard>
-                        <Divider blocks={2}>
+                    <>
+                        <HeaderBackground>
                             <LeftSide>
-                                <LeftSideInner>
-                                    <HeaderTitle>Обслуживание кондиционеров <br />от <span>профессионалов</span></HeaderTitle>
-                                    <HeaderSubTitle>Противоположная точка зрения подразумевает, что тщательные исследования конкурентов объединены в целые кластеры себе подобных.</HeaderSubTitle>
-                                    <Button>Заказать звонок</Button>
-                                </LeftSideInner>
                             </LeftSide>
                             <RightSide></RightSide>
-                        </Divider>
-                    </HeaderCard>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <HeaderCard>
-                        <Divider blocks={2}>
+                        </HeaderBackground>
 
-                            <LeftSide>
-                                <LeftSideInner>
-                                    <HeaderTitle>Клининговые услуги <br />от <span>профессионалов</span></HeaderTitle>
-                                    <HeaderSubTitle>Противоположная точка зрения подразумевает, что тщательные исследования конкурентов объединены в целые кластеры себе подобных.</HeaderSubTitle>
-                                    <Button>Заказать звонок</Button>
-                                </LeftSideInner>
-                            </LeftSide>
-                            <RightSide></RightSide>
-                        </Divider>
-                    </HeaderCard>
+                        <HeaderCard>
+                            <Container>
+                                <HeaderText blocks={2}>
+                                    <LeftSideInner>
+                                        <HeaderTitle>Обслуживание кондиционеров <br />от <span>профессионалов</span></HeaderTitle>
+                                        <HeaderSubTitle>Противоположная точка зрения подразумевает, что тщательные исследования конкурентов объединены в целые кластеры себе подобных.</HeaderSubTitle>
+                                        <Button>Заказать звонок</Button>
+                                    </LeftSideInner>
+                                </HeaderText>
+                            </Container>
+                        </HeaderCard>
+                    </>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <HeaderCard>
-                        <Divider blocks={2}>
+                    <>
+                        <HeaderBackground>
                             <LeftSide>
-                                <LeftSideInner>
-                                    <HeaderTitle>Обслуживание кондиционеров <br />от <span>профессионалов</span></HeaderTitle>
-                                    <HeaderSubTitle>Противоположная точка зрения подразумевает, что тщательные исследования конкурентов объединены в целые кластеры себе подобных.</HeaderSubTitle>
-                                    <Button>Заказать звонок</Button>
-                                </LeftSideInner>
                             </LeftSide>
                             <RightSide></RightSide>
-                        </Divider>
-                    </HeaderCard>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <HeaderCard>
-                        <Divider blocks={2}>
-                            <LeftSide>
-                                <LeftSideInner>
-                                    <HeaderTitle>Обслуживание кондиционеров <br />от <span>профессионалов</span></HeaderTitle>
-                                    <HeaderSubTitle>Противоположная точка зрения подразумевает, что тщательные исследования конкурентов объединены в целые кластеры себе подобных.</HeaderSubTitle>
-                                    <Button>Заказать звонок</Button>
-                                </LeftSideInner>
-                            </LeftSide>
-                            <RightSide></RightSide>
-                        </Divider>
-                    </HeaderCard>
+                        </HeaderBackground>
+
+                        <HeaderCard>
+                            <Container>
+                                <Divider blocks={2}>
+                                    <LeftSideInner>
+                                        <HeaderTitle>Обслуживание кондиционеров <br />от <span>профессионалов</span></HeaderTitle>
+                                        <HeaderSubTitle>Противоположная точка зрения подразумевает, что тщательные исследования конкурентов объединены в целые кластеры себе подобных.</HeaderSubTitle>
+                                        <Button>Заказать звонок</Button>
+                                    </LeftSideInner>
+                                </Divider>
+                            </Container>
+                        </HeaderCard>
+                    </>
                 </SwiperSlide>
             </CustomSwiper>
+
+
+
 
 
             <HeaderBottom>
@@ -120,11 +122,7 @@ const Header = () => {
                             <SubPhone>с 10 до 22, без выходных</SubPhone>
                         </div>
 
-                        <SwiperNavigation>
-                            <div className='prev'>Назад</div>
-                            <div className='scrollbar'></div>
-                            <div className='next'>Вперед</div>
-                        </SwiperNavigation>
+                        <SwiperNavigation className="header" />
 
                     </Divider>
                 </Container>
@@ -141,28 +139,41 @@ const Header = () => {
                 </Navigation>
             </NavigationOverlay>
 
+
         </StyledHeader>
     )
 }
 
 export default Header;
 
+const HeaderBackground = styled.div`
+    position: absolute;
+    height: 100%;
+    width: 100%;
+`
+
 const StyledHeader = styled.header`
-    height: 810px;
+    height: 768px;
+    width: 100%;
     position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     overflow: hidden;
+    
+    @media screen and (min-width: 1024px) {
+        height: 810px;
+    }
 `
 
 const HeaderTop = styled.div`
-    position: absolute ;
+    position: absolute;
     left: 0;
     right: 0;
     padding: 25px 0;
     /* background-color: #2C4DC3; */
-    z-index: 150;
+    z-index: 101;
+`
+
+const HeaderText = styled.div`
+    width: 100%;
 `
 
 const StyledContainer = styled(Container)`
@@ -173,32 +184,81 @@ const StyledContainer = styled(Container)`
 const HeaderCard = styled.div`
     width: 100%;
     height: 100%;
-    background-color: #2C4DC3;
+    /* background-color: #2C4DC3; */
     display: flex;
     overflow: hidden;
+    position: absolute;
+    align-items: flex-end;
+    padding-bottom: 60px;
+    
+    @media screen and (min-width: 1024px) {
+        justify-content: flex-start;
+	    align-items: center;    
+        padding-bottom: 0;
+    }
 
 `
 
 const LeftSide = styled.div`
-    display: flex;
-    flex-direction: column;
-	justify-content: center;
-	align-items: center;
+    display: none;
+    
+    
+    @media screen and (min-width: 1024px) {
+        display: inline-block;
+        background-color: #2C4DC3;
+        width: 50%;
+        height: 100%;
+    }
+`
+
+const RightSide = styled.div`
     height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-image: linear-gradient(to top, rgba(44, 77, 195, 0.3), rgba(44, 77, 195, 0.3)), url('/images/montag1.png');
+    position: relative;
+    
+    @media screen and (min-width: 1024px) {
+        width: 50%;
+        display: inline-block;
+    }
 `
 
 const LeftSideInner = styled.div`
-    margin-left: calc((100vw - 1250px) / 2);
-    margin-right: 100px;
+    /* margin-left: calc((100vw - 1250px) / 2);
+    margin-right: 100px; */
+    /* position: absolute; */
+    /* left: 0; */
+    padding-right: 50px;
+
+    width: 100%;
+    
+    @media screen and (min-width: 540px) {
+        width: 70%;
+    }
+    @media screen and (min-width: 1024px) {
+        width: 50%;
+    }
+
+
 `
 
+
 const HeaderTitle = styled.h1`
-    font-size: 50px;
     color: #fff;
     font-weight: 400;
-    line-height: 57.5px;
-    letter-spacing: 2.1px;
     margin-bottom: 20px;
+    font-size: 34px;
+    letter-spacing: 1.5px;
+    line-height: 40px;
+    
+    @media screen and (min-width: 1024px) {
+        line-height: 57.5px;
+        letter-spacing: 2.1px;
+        font-size: 50px;
+    }
 
 
     span {
@@ -215,20 +275,19 @@ const HeaderSubTitle = styled.h2`
     margin-bottom: 40px;
 `
 
-const RightSide = styled.div`
-    height: 100%;
-    overflow: hidden;
-    background-size: cover;
-    background-position: center;
-    background-image: linear-gradient(to top, rgba(44, 77, 195, 0.3), rgba(44, 77, 195, 0.3)), url('/images/montag1.png');
-    position: relative;
-`
+
 
 const HeaderBottom = styled.div`
     position: absolute;
     bottom: 32px;
     left: 0;
     right: 0;
+    z-index: 1;
+    display: none;
+    
+    @media screen and (min-width: 1024px) {
+        display: block;
+    }
 `
 
 const Hamburger = styled.div`
@@ -282,15 +341,21 @@ const NavigationOverlay = styled.div`
     right: ${({ isOpenHamburger }) => isOpenHamburger ? '0' : '-100%'};
     transition: all 0.3s ease-in-out;
     z-index: 100;
+    top: 0;
 `
 
 const Navigation = styled.div`
     top: 0;
     height: 100%;
     background-color: #0F0F10;
-    width: calc((100vw - 1230px) / 2 + 400px);
     position: absolute;
     right: 0;
+    width: 100%;
+    
+    @media screen and (min-width: 1024px) {
+        width: calc((100vw - 1230px) / 2 + 400px);
+    }
+
 
     ul {
         padding-top: 121px;
@@ -315,45 +380,4 @@ const Phone = styled.div`
 const SubPhone = styled.div`
     font-size: 12px;
     color: #D6DDF3;
-`
-
-const SwiperNavigation = styled.div`
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 20px;
-
-    .prev,
-    .next {
-        color: #fff;
-        cursor: pointer;
-        font-size: 16px;
-        user-select: none;
-
-        &.swiper-button-disabled {
-            opacity: .35;
-            cursor: auto;
-            pointer-events: none;
-        }
-    }
-
-    .prev {
-        margin-right: 24px;
-    }
-
-    .next {
-        margin-left: 24px;
-    }
-
-    .scrollbar {
-        height: 1px;
-        background-color:#a7b5cf;
-        width: 155px;
-        position: relative;
-        margin-top: 8px;
-        
-        .swiper-scrollbar-drag {
-            background-color:#fff;
-        }
-    }
-
 `

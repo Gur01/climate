@@ -8,8 +8,8 @@ import Section from '../elements/Section';
 import FeedbackCard from '../elements/FeedbackCard';
 import Title from '../elements/Title';
 import styled from 'styled-components';
-
-SwiperCore.use([Navigation, Scrollbar]);
+import CustomSwiper from './CustomSwiper';
+import SwiperNavigation from "../elements/SwiperNavigation";
 
 const Feedback = ({ children, ...props }) => {
     return (
@@ -17,22 +17,37 @@ const Feedback = ({ children, ...props }) => {
             <Container>
                 <StyledTitle>Отзывы <span>наших клиентов</span></StyledTitle>
 
-                <StyledSwiper
-                    modules={[Scrollbar]}
-                    slidesPerView='auto'
+                <CustomSwiper
                     spaceBetween={16}
-                    loop={true}
-                    pagination={{
-                        clickable: true
+                    slidesPerView={3}
+                    navigation={{
+                        prevEl: '.feedback-prev',
+                        nextEl: '.feedback-next',
                     }}
-                    scrollbar={{ draggable: false }}
-                    navigation={true}
+                    scrollbar={{
+                        hide: false,
+                        el: '.feedback-scrollbar',
+                        draggable: false,
+                    }}
+                    breakpoints = {{
+                        320: {
+                          slidesPerView: 1,
+                        },
+                        768: {
+                          slidesPerView: 2,
+                        },
+                        1024: {
+                          slidesPerView: 3,
+                        }
+                    }}
                 >
                     <SwiperSlide><FeedbackCard /></SwiperSlide>
                     <SwiperSlide><FeedbackCard /></SwiperSlide>
                     <SwiperSlide><FeedbackCard /></SwiperSlide>
                     <SwiperSlide><FeedbackCard /></SwiperSlide>
-                </StyledSwiper>
+                </CustomSwiper>
+                <SwiperNavigation className='feedback'/>
+
             </Container>
 
         </StyledSection>

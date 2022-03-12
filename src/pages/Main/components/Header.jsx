@@ -1,16 +1,14 @@
+import { Button, Container } from '@/components';
+import { useClickOutside } from '@/hooks/useClickOutside';
 import { useRef, useState } from 'react';
 import styled from 'styled-components';
-import { SwiperSlide } from 'swiper/react';
-import Button from '../elements/Button';
-import Container from '../elements/Container';
-import Divider from '../elements/Divider';
-import Logo from '../elements/Logo';
-import SwiperNavigation from '../elements/SwiperNavigation';
-import CustomSwiper from './CustomSwiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
-import { useClickOutside } from '../hooks/useClickOutside'
+import { SwiperSlide } from 'swiper/react';
+import CustomSwiper from '../elements/CustomSwiper';
+import Logo from '../elements/Logo';
+import SwiperNavigation from '../elements/SwiperNavigation';
 
 const Header = ({ data }) => {
 

@@ -1,5 +1,5 @@
+import { Button } from '@/components';
 import styled from 'styled-components';
-import Button from './Button';
 
 const Banner = ({ title, subTitle, ...rest }) => {
     return (

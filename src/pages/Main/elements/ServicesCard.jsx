@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Button from './Button';
+import {Button} from '@/components';
 
 const ServicesCard = ({ image, title, subTitle, ...rest }) => {
     return (

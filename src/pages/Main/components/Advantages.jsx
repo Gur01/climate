@@ -1,10 +1,6 @@
+import { Container, Group, Section, Title } from '@/components';
 import styled from 'styled-components';
-import Section from '../elements/Section';
-import Title from '../elements/Title';
-import Container from '../elements/Container';
-import Divider from '../elements/Divider';
 import AdvantagesCard from '../elements/AdvantagesCard';
-import Group from '../elements/Group';
 import Banner from '../elements/Banner';
 
 const Advantages = ({ data }) => {

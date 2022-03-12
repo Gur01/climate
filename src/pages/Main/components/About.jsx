@@ -1,7 +1,4 @@
-import Container from '../elements/Container';
-import Layout from '../elements/Layout';
-import Section from '../elements/Section';
-import Title from '../elements/Title';
+import {Container, Layout, Section, Title} from '@/components';
 import styled from 'styled-components';
 
 const Advantages = ({ data, ...rest }) => {

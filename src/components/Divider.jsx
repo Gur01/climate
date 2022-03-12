@@ -1,5 +1,6 @@
 
 import styled from 'styled-components';
+
 const Divider = ({ children, blocks, ...props }) => {
     return (
         <StyledDivider blocks={blocks} {...props}>

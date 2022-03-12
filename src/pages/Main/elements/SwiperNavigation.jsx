@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ArrowLeft } from './Icons'
+import { ArrowLeft } from '@/components/Icons'
 
 const SwiperNavigation = ({ theme = 'black', className }) => {
     return (

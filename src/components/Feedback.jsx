@@ -1,15 +1,14 @@
-import SwiperCore, { Navigation, Scrollbar } from 'swiper';
+import styled from 'styled-components';
 import "swiper/css";
 import "swiper/css/navigation";
 import 'swiper/css/scrollbar';
 import { SwiperSlide } from "swiper/react";
 import Container from '../elements/Container';
-import Section from '../elements/Section';
 import FeedbackCard from '../elements/FeedbackCard';
-import Title from '../elements/Title';
-import styled from 'styled-components';
-import CustomSwiper from './CustomSwiper';
+import Section from '../elements/Section';
 import SwiperNavigation from "../elements/SwiperNavigation";
+import Title from '../elements/Title';
+import CustomSwiper from './CustomSwiper';
 
 const Feedback = ({ data, ...rest }) => {
     const {title, items} = data;

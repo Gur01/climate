@@ -4,7 +4,7 @@ import Feedback from '../components/Feedback';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Services from '../components/Services';
-import { data } from './data';
+import { data } from '../data';
 
 export const getStaticProps = async () => {
   return {

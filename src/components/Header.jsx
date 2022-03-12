@@ -116,15 +116,13 @@ const Header = () => {
 
             <HeaderBottom>
                 <Container>
-                    <Divider blocks={2}>
-                        <div>
+                    <HeaderBottomInner>
+                        <ContactBlock>
                             <Phone>+7 000 000 00 00</Phone>
                             <SubPhone>с 10 до 22, без выходных</SubPhone>
-                        </div>
-
-                        <SwiperNavigation className="header" />
-
-                    </Divider>
+                        </ContactBlock>
+                        <SwiperNavigation className="header"/>
+                    </HeaderBottomInner>
                 </Container>
             </HeaderBottom>
 
@@ -138,7 +136,6 @@ const Header = () => {
                     </ul>
                 </Navigation>
             </NavigationOverlay>
-
 
         </StyledHeader>
     )
@@ -189,12 +186,13 @@ const HeaderCard = styled.div`
     overflow: hidden;
     position: absolute;
     align-items: flex-end;
-    padding-bottom: 60px;
+    padding-bottom: 50px;
     
     @media screen and (min-width: 1024px) {
         justify-content: flex-start;
 	    align-items: center;    
         padding-bottom: 0;
+        padding-bottom: 60px;
     }
 
 `
@@ -283,11 +281,6 @@ const HeaderBottom = styled.div`
     left: 0;
     right: 0;
     z-index: 1;
-    display: none;
-    
-    @media screen and (min-width: 1024px) {
-        display: block;
-    }
 `
 
 const Hamburger = styled.div`
@@ -380,4 +373,46 @@ const Phone = styled.div`
 const SubPhone = styled.div`
     font-size: 12px;
     color: #D6DDF3;
+`
+
+const ContactBlock = styled.div`
+    display: none;
+    
+    @media screen and (min-width: 1024px) {
+        display: block;
+    }
+`
+
+const HeaderBottomInner = styled.div`
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin-bottom: 18px;
+    
+    @media screen and (min-width: 1024px) {
+        justify-content: space-between;
+        margin-bottom: 0;
+    }
+    
+    .prev-mobile, 
+    .next-mobile {
+        display: none;
+    }
+    @media screen and (min-width: 450px) {
+        .prev-mobile, 
+        .next-mobile {
+            display: flex;
+        }
+    }
+    @media screen and (min-width: 1024px) {
+        .prev-mobile, 
+        .next-mobile {
+            display: none;
+        }
+    }
+
+    > * {
+        width: 50%;
+    }
 `

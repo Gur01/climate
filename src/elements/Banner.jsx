@@ -16,18 +16,23 @@ export default Banner;
 
 const StyledBanner = styled.div`
     background-color: #2C4DC3;
-    padding: 85px 105px;
-    margin-top: 120px;
+    margin-top: 60px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     align-items: flex-start;
-
+    padding: 20px;
+    
     > div {
         margin-bottom: 30px;
     }
     
+    @media screen and (min-width: 540px) {
+        padding: 85px 105px;
+    }
+    
     @media screen and (min-width: 1024px) {
+        margin-top: 120px;
         flex-direction: row;
         align-content: center;
         margin-bottom: 0;

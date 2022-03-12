@@ -29,6 +29,7 @@ export default Advantages;
 const StyledTitle = styled(Title)`
     font-size: 26px;
     color: #0F0F10;
+    margin-bottom: 40px;
 `
 
 const TextBlock = styled(Layout)`
@@ -43,6 +44,7 @@ const TextBlock = styled(Layout)`
 
 const StyledImage = styled.img`
         margin-top: 20px;
+        width: 100%;
 `
 
 

@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 import Button from './Button';
-import Group from './Group';
 
-const Banner = ({ children, ...props }) => {
+const Banner = ({ title, subTitle, ...rest }) => {
     return (
-        <StyledBanner {...props}>
-            <Title>Персональная <span>Скидка 10%</span></Title>
-            <Description>Явные признаки победы институционализации разоблачены. Идейные соображения.</Description>
+        <StyledBanner {...rest}>
+            <Title dangerouslySetInnerHTML={{__html: title}} />
+            <Description>{subTitle}</Description>
             <Button>Получить скидку</Button>
         </StyledBanner>
     )

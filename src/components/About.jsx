@@ -4,19 +4,17 @@ import Section from '../elements/Section';
 import Title from '../elements/Title';
 import styled from 'styled-components';
 
-const Advantages = ({ children, ...props }) => {
+const Advantages = ({ data, ...rest }) => {
+    const {title, text} = data;
+
     return (
-        <Section>
+        <Section {...rest}>
             <Container>
                 <Layout columns={5} gap={16}>
-                    <StyledTitle>О компании</StyledTitle>
+                    <StyledTitle>{title}</StyledTitle>
                 </Layout>
-                <TextBlock columns={7}>
-                    <p>Явные признаки победы институционализации разоблачены. Идейные соображения высшего порядка, а также современная методология разработки не даёт нам.</p>
-                    <p>Явные признаки победы институционализации разоблачены. Идейные соображения высшего порядка, а также современная методология разработки не даёт нам.</p>
-                    <p>Явные признаки победы институционализации разоблачены. Идейные соображения высшего порядка, а также современная методология разработки не даёт нам.</p>
-                    <p>Явные признаки победы институционализации разоблачены. Идейные соображения высшего порядка, а также современная методология разработки не даёт нам.</p>
-                    <p>Явные признаки победы институционализации разоблачены. Идейные соображения высшего порядка, а также современная методология разработки не даёт нам.</p>
+                <TextBlock columns={7} >
+                    <div dangerouslySetInnerHTML={{__html: text}} />
                     <StyledImage src="/images/worker.jpg" alt="" />
                 </TextBlock>
             </Container>

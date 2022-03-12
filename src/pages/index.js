@@ -1,21 +1,32 @@
-// import Head from 'next/head'
-import Image from 'next/image'
-// import styles from '../styles/Home.module.css'
-import Header from '../components/Header';
+import About from '../components/About';
 import Advantages from '../components/Advantages';
-import Services from '../components/Services';
 import Feedback from '../components/Feedback';
 import Footer from '../components/Footer';
-import About from '../components/About';
+import Header from '../components/Header';
+import Services from '../components/Services';
+import { data } from './data';
 
-export default function Home() {
+export const getStaticProps = async () => {
+  return {
+    props: data
+  }
+}
+
+export default function Home(
+  {
+    header,
+    advantages,
+    services,
+    feedback,
+    about
+  }) {
   return (
     <>
-      <Header />
-      <Advantages />
-      <Services />
-      <Feedback />
-      <About />
+      <Header data={header} />
+      <Advantages data={advantages} />
+      <Services data={services} />
+      <Feedback data={feedback} />
+      <About data={about} />
       <Footer />
     </>
   )

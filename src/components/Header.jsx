@@ -12,7 +12,9 @@ import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
 import { useClickOutside } from '../hooks/useClickOutside'
 
-const Header = () => {
+const Header = ({ data }) => {
+
+    const { phone, slides, subPhone } = data;
     const [isOpenHamburger, setOpenHamburger] = useState(false);
 
     const navRef = useRef(null);
@@ -20,14 +22,14 @@ const Header = () => {
     const headerRef = useRef(null);
 
 
-    // useClickOutside(navRef, (e) => {
-    //     e.stopPropagation();
+    useClickOutside(navRef, (e) => {
+        e.stopPropagation();
 
-    //     const body = document.body;
-    //     body.style.overflowY = 'auto';
+        const body = document.body;
+        body.style.overflowY = 'auto';
 
-    //     setOpenHamburger(false);
-    // }, buttonRef)
+        setOpenHamburger(false);
+    }, buttonRef)
 
     const handleHamburger = (e) => {
         e.stopPropagation();
@@ -66,62 +68,41 @@ const Header = () => {
                     el: '.header-scrollbar',
                     draggable: false,
                 }}>
-                <SwiperSlide>
-                    <>
-                        <HeaderBackground>
-                            <LeftSide>
-                            </LeftSide>
-                            <RightSide></RightSide>
-                        </HeaderBackground>
 
-                        <HeaderCard>
-                            <Container>
-                                <HeaderText blocks={2}>
-                                    <LeftSideInner>
-                                        <HeaderTitle>Обслуживание кондиционеров <br />от <span>профессионалов</span></HeaderTitle>
-                                        <HeaderSubTitle>Противоположная точка зрения подразумевает, что тщательные исследования конкурентов объединены в целые кластеры себе подобных.</HeaderSubTitle>
-                                        <Button>Заказать звонок</Button>
-                                    </LeftSideInner>
-                                </HeaderText>
-                            </Container>
-                        </HeaderCard>
-                    </>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <>
-                        <HeaderBackground>
-                            <LeftSide>
-                            </LeftSide>
-                            <RightSide></RightSide>
-                        </HeaderBackground>
+                {slides.map((slide, index) => {
+                    return (
+                        <SwiperSlide key={index}>
+                            <>
+                                <HeaderBackground>
+                                    <LeftSide>
+                                    </LeftSide>
+                                    <RightSide image={slide?.image}></RightSide>
+                                </HeaderBackground>
 
-                        <HeaderCard>
-                            <Container>
-                                <Divider blocks={2}>
-                                    <LeftSideInner>
-                                        <HeaderTitle>Обслуживание кондиционеров <br />от <span>профессионалов</span></HeaderTitle>
-                                        <HeaderSubTitle>Противоположная точка зрения подразумевает, что тщательные исследования конкурентов объединены в целые кластеры себе подобных.</HeaderSubTitle>
-                                        <Button>Заказать звонок</Button>
-                                    </LeftSideInner>
-                                </Divider>
-                            </Container>
-                        </HeaderCard>
-                    </>
-                </SwiperSlide>
+                                <HeaderCard>
+                                    <Container>
+                                        <HeaderText blocks={2}>
+                                            <LeftSideInner>
+                                                <HeaderTitle dangerouslySetInnerHTML={{__html: slide?.title}} />
+                                                <HeaderSubTitle>{slide.subTitle}</HeaderSubTitle>
+                                                <Button>Заказать звонок</Button>
+                                            </LeftSideInner>
+                                        </HeaderText>
+                                    </Container>
+                                </HeaderCard>
+                            </>
+                        </SwiperSlide>)
+                })}
             </CustomSwiper>
-
-
-
-
 
             <HeaderBottom>
                 <Container>
                     <HeaderBottomInner>
                         <ContactBlock>
-                            <Phone>+7 000 000 00 00</Phone>
-                            <SubPhone>с 10 до 22, без выходных</SubPhone>
+                            <Phone>{phone}</Phone>
+                            <SubPhone>{subPhone}</SubPhone>
                         </ContactBlock>
-                        <SwiperNavigation className="header"/>
+                        <SwiperNavigation className="header" />
                     </HeaderBottomInner>
                 </Container>
             </HeaderBottom>
@@ -215,7 +196,7 @@ const RightSide = styled.div`
     overflow: hidden;
     background-size: cover;
     background-position: center;
-    background-image: linear-gradient(to top, rgba(44, 77, 195, 0.3), rgba(44, 77, 195, 0.3)), url('/images/montag1.png');
+    ${({image}) => image && `background-image: linear-gradient(to top, rgba(44, 77, 195, 0.3), rgba(44, 77, 195, 0.3)), url(${image})`};
     position: relative;
     
     @media screen and (min-width: 1024px) {

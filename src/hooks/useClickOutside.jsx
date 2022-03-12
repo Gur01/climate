@@ -3,7 +3,6 @@ import { useEffect } from "react";
 export const useClickOutside = (ref, cb, exception) => {
     useEffect(() => {
         const listener = (event) => {
-            console.log('hello');
             if(exception) {
                 if (ref.current && !exception.current.contains(event.target) && !ref.current.contains(event.target)) {
                     cb(event);

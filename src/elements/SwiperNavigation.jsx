@@ -1,11 +1,7 @@
 import styled from 'styled-components';
 import { ArrowLeft } from './Icons'
-// import useWindowSize from '../hooks/useWindowSize';
 
 const SwiperNavigation = ({ theme = 'black', className }) => {
-    // const size = useWindowSize();
-
-    // console.log(size);
     return (
         <Navigation theme={theme}>
             <div className={`${className}-prev prev`}></div>

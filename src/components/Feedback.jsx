@@ -11,11 +11,13 @@ import styled from 'styled-components';
 import CustomSwiper from './CustomSwiper';
 import SwiperNavigation from "../elements/SwiperNavigation";
 
-const Feedback = ({ children, ...props }) => {
+const Feedback = ({ data, ...rest }) => {
+    const {title, items} = data;
+
     return (
-        <StyledSection {...props} >
+        <StyledSection {...rest} >
             <Container>
-                <StyledTitle>Отзывы <span>наших клиентов</span></StyledTitle>
+                <StyledTitle dangerouslySetInnerHTML={{__html: title}} />
 
                 <CustomSwiper
                     spaceBetween={16}
@@ -41,10 +43,13 @@ const Feedback = ({ children, ...props }) => {
                         }
                     }}
                 >
-                    <SwiperSlide><FeedbackCard /></SwiperSlide>
-                    <SwiperSlide><FeedbackCard /></SwiperSlide>
-                    <SwiperSlide><FeedbackCard /></SwiperSlide>
-                    <SwiperSlide><FeedbackCard /></SwiperSlide>
+                    {items.map((item, index)=> {
+                        return (
+                            <SwiperSlide key={index}>
+                                <FeedbackCard text={item.text} name={item.name} image={item.image}/>
+                            </SwiperSlide>
+                        )
+                    })}
                 </CustomSwiper>
                 <SwiperNavigation className='feedback'/>
 

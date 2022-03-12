@@ -1,16 +1,15 @@
 import styled from 'styled-components';
-import Button from './Button';
 
-const FeedbackCard = ({ children, ...props }) => {
+const FeedbackCard = ({ text, name, image, ...rest }) => {
     return (
-        <Card>
-                <Text>Разнообразный и богатый опыт говорит нам, что убеждённость некоторых оппонентов создаёт предпосылки для прогресса профессионального сообщества. Кстати,  многие известные личности являются только методом политического участия и указаны как претенденты на роль ключевых факторов.</Text>
+        <Card {...rest}>
+                <Text>{text}</Text>
                 <AuthorBlock>
                     <UserImage>
-                        <img src="./images/user.png" alt="" />
+                        <img src={image} alt="" />
                     </UserImage>
                     
-                    <Author>Степан Розин</Author>
+                    <Author>{name}</Author>
                 </AuthorBlock>
         </Card>
     )

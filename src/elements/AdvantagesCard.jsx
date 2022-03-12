@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-const AdvantagesCard = ({ children, ...props }) => {
+const AdvantagesCard = ({ image, title, subTitle }) => {
     return (
         <Card>
-            <img src="./icons/profi.svg" alt="" />
-            <Title>Профессионалы своего дела</Title>
-            <p>Разнообразный и богатый опыт говорит нам, что начало повседневной работы по.</p>
+            <img src={image} alt="" />
+            <Title>{title}</Title>
+            <p>{subTitle}</p>
         </Card>
     )
 }

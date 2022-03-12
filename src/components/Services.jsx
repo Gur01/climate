@@ -6,11 +6,13 @@ import Title from '../elements/Title';
 import CustomSwiper from './CustomSwiper';
 import SwiperNavigation from "../elements/SwiperNavigation";
 
-const Services = ({ children, ...props }) => {
+const Services = ({ data, ...rest }) => {
+    const {title, items} = data;
+
     return (
-        <Section {...props}>
+        <Section {...rest}>
             <Container>
-                <Title style={{marginBottom: '60px'}}>Наши <span>услуги</span></Title>
+                <Title style={{marginBottom: '60px'}} dangerouslySetInnerHTML={{__html: title}} />
 
                 <CustomSwiper
                     spaceBetween={16}
@@ -36,10 +38,13 @@ const Services = ({ children, ...props }) => {
                         }
                     }}
                 >
-                    <SwiperSlide><ServicesCard /></SwiperSlide>
-                    <SwiperSlide><ServicesCard /></SwiperSlide>
-                    <SwiperSlide><ServicesCard /></SwiperSlide>
-                    <SwiperSlide><ServicesCard /></SwiperSlide>
+                    {items.map((item, index)=> {
+                        return (
+                            <SwiperSlide key={index}>
+                                <ServicesCard image={item?.image} title={item?.title} subTitle={item?.subTitle}/>
+                            </SwiperSlide>
+                        )
+                    })}
                 </CustomSwiper>
                 <SwiperNavigation theme="white" className='services'/>
             </Container>

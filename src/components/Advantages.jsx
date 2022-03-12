@@ -7,26 +7,26 @@ import AdvantagesCard from '../elements/AdvantagesCard';
 import Group from '../elements/Group';
 import Banner from '../elements/Banner';
 
-const Advantages = ({ children, ...props }) => {
+const Advantages = ({ data }) => {
+    const {title, subTitle, items, banner} = data;
+
     return (
         <Section>
             <Container>
                 <StyledGroup>
                     <AdvantagesTitle>
-                        <StyledTitle>Наши <span>преимущества</span></StyledTitle>
-                        <TitleDescription>Явные признаки победы институционализации разоблачены.
-                            Идейные соображения высшего порядка, а также современная методология разработки не даёт нам.</TitleDescription>
+                        <StyledTitle dangerouslySetInnerHTML={{__html: title}} />
+                        <TitleDescription>{subTitle}</TitleDescription>
                     </AdvantagesTitle>
 
                     <AdvantagesGroup>
-                            <AdvantagesCard />
-                            <AdvantagesCard />
-                            <AdvantagesCard />
-                            <AdvantagesCard />
+                            {items.map((item, index) => {
+                                return <AdvantagesCard key={index} image={item.image} title={item.title} subTitle={item.subTitle}/>
+                            })}
                     </AdvantagesGroup>
 
                 </StyledGroup>
-                <Banner />
+                <Banner title={banner?.title} subTitle={banner?.subTitle} />
             </Container>
 
         </Section>

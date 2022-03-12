@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import Button from './Button';
 
-const ServicesCard = ({ children, ...props }) => {
+const ServicesCard = ({ image, title, subTitle, ...rest }) => {
     return (
-        <Card>
-            <img src="./images/services1.jpg" alt="" />
+        <Card {...rest}>
+            <img src={image} alt="" />
             <TextBlock>
-                <Title>Ремонт кондиционера</Title>
-                <Description>Ваш кондиционер не холодит? Тогда Вам сюда.</Description>
+                <Title>{title}</Title>
+                <Description>{subTitle}</Description>
                 <Button>Заказать услугу</Button>
             </TextBlock>
         </Card>

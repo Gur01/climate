@@ -8,6 +8,7 @@ import Footer from './Main/components/Footer';
 import Header from './Main/components/Header';
 import Services from './Main/components/Services';
 import ContactForm from './Main/elements/ContactForm';
+import ContactFormSuccess from './Main/elements/ContactFormSuccess';
 
 export const getStaticProps = async () => {
     return {
@@ -22,7 +23,7 @@ export default function Home({
     feedback,
     about
 }) {
-    const {isOpenedModal} = useModal();
+    const {isOpenedModal, wasSendForm} = useModal();
 
     return (
         <>
@@ -33,7 +34,8 @@ export default function Home({
             <About data={about} />
             <Footer />
             <Modal open={isOpenedModal}>
-                <ContactForm />
+                {!wasSendForm && <ContactForm />}
+                {wasSendForm && <ContactFormSuccess />}
             </Modal>
         </>
     )

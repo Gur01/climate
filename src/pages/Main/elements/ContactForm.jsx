@@ -19,7 +19,7 @@ const ContactForm = () => {
         confirm: ''
     });
 
-    const {setIsOpenedModal} = useModal()
+    const {setIsOpenedModal, setWasSendForm} = useModal()
 
     const validateForm = () => {
         const newErrors = { ...error };
@@ -60,6 +60,7 @@ const ContactForm = () => {
 
         if (validateForm()) {
             console.log('send form');
+            setWasSendForm(true);
         }
     }
 
@@ -98,8 +99,8 @@ const ContactForm = () => {
             <Input placeholder="Телефон" name="phone" errorMessage={error.phone} onChange={onChange} />
             <Textarea placeholder="Сообщение" name="message" onChange={onChange} />
             <CheckboxBlock error={error.confirm}>
-                <input type="checkbox" name="confirm" onChange={onChangeCheckbox}/> 
-                <span>Даю согласие на обработку персональных данных</span>
+                <input type="checkbox" name="confirm" onChange={onChangeCheckbox} id="confirm"/> 
+                <label htmlFor="confirm">Даю согласие на обработку персональных данных</label>
             </CheckboxBlock>
             
             <StyledButton type='submit' onClick={submit}>Заказать звонок</StyledButton>
@@ -132,10 +133,17 @@ const StyledButton = styled(Button)`
 
 const CheckboxBlock = styled.div`
     margin-top: 27px;
+    cursor: pointer;
 
-    span {
+    input {
+        cursor: pointer;
+    }
+    
+    label {
         margin-left: 17px;
         color: ${({ error }) => error ? '#FF0000' : '#0F0F10'};
+        cursor: pointer;
+
     }
 `
 

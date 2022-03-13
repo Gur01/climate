@@ -1,4 +1,5 @@
 import { Button, Container } from '@/components';
+import { useModal } from '@/context';
 import { useClickOutside } from '@/hooks/useClickOutside';
 import { useRef, useState } from 'react';
 import styled from 'styled-components';
@@ -11,14 +12,13 @@ import Logo from '../elements/Logo';
 import SwiperNavigation from '../elements/SwiperNavigation';
 
 const Header = ({ data }) => {
-
     const { phone, slides, subPhone } = data;
     const [isOpenHamburger, setOpenHamburger] = useState(false);
+    const {setIsOpenedModal} = useModal();
 
     const navRef = useRef(null);
     const buttonRef = useRef(null);
     const headerRef = useRef(null);
-
 
     useClickOutside(navRef, (e) => {
         e.stopPropagation();
@@ -83,7 +83,7 @@ const Header = ({ data }) => {
                                             <LeftSideInner>
                                                 <HeaderTitle dangerouslySetInnerHTML={{__html: slide?.title}} />
                                                 <HeaderSubTitle>{slide.subTitle}</HeaderSubTitle>
-                                                <Button>Заказать звонок</Button>
+                                                <Button onClick={()=> setIsOpenedModal(true)}>Заказать звонок</Button>
                                             </LeftSideInner>
                                         </HeaderText>
                                     </Container>

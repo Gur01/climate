@@ -4,6 +4,11 @@ export const Profi = () => <svg width="30" height="30" viewBox="0 0 30 30" fill=
 </svg>
 
 export const ArrowLeft = () => <svg width="14" height="26" viewBox="0 0 14 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M12 24L1 13L12 2" stroke="white" strokeWidth="2" strokeLinecap="square" strokeLinejoin="round"/>
+    <path d="M12 24L1 13L12 2" stroke="white" strokeWidth="2" strokeLinecap="square" strokeLinejoin="round" />
 </svg>
+
+export const Cross = (props) => <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" {...props} >
+    <path d="M1 1L29 29M29 1L1 29" stroke="#2C4DC3" strokeWidth="2" />
+</svg>
+
 

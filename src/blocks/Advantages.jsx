@@ -1,7 +1,6 @@
-import { Container, Group, Section, Title } from '@/components';
+import { AdvantagesCard, Banner } from '@/components';
+import { Container, Group, Section, Title } from '@/ui';
 import styled from 'styled-components';
-import AdvantagesCard from '../elements/AdvantagesCard';
-import Banner from '../elements/Banner';
 
 const Advantages = ({ data }) => {
     const {title, subTitle, items, banner} = data;

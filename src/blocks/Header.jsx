@@ -1,15 +1,13 @@
-import { Button, Container } from '@/components';
+import { CustomSwiper, Logo, SwiperNavigation } from '@/components';
 import { useModal } from '@/context';
 import { useClickOutside } from '@/hooks/useClickOutside';
+import { Button, Container } from '@/ui';
 import { useRef, useState } from 'react';
 import styled from 'styled-components';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
 import { SwiperSlide } from 'swiper/react';
-import CustomSwiper from '../elements/CustomSwiper';
-import Logo from '../elements/Logo';
-import SwiperNavigation from '../elements/SwiperNavigation';
 
 const Header = ({ data }) => {
     const { phone, slides, subPhone } = data;

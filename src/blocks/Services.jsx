@@ -1,8 +1,6 @@
-import { Container, Section, Title } from '@/components';
+import { Container, Section, Title } from '@/ui';
 import { SwiperSlide } from "swiper/react";
-import CustomSwiper from '../elements/CustomSwiper';
-import ServicesCard from '../elements/ServicesCard';
-import SwiperNavigation from "../elements/SwiperNavigation";
+import { CustomSwiper, ServicesCard, SwiperNavigation } from '@/components';
 
 const Services = ({ data, ...rest }) => {
     const {title, items} = data;

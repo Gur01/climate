@@ -1,4 +1,4 @@
-import { Cross } from '@/components';
+import { Cross } from '@/ui';
 import { useModal } from '@/context';
 import styled from 'styled-components';
 

@@ -1,4 +1,4 @@
-import { Button, Cross, Input, Textarea } from '@/components';
+import { Button, Cross, Input, Textarea } from '@/ui';
 import { useModal } from '@/context';
 import { useState } from 'react';
 import styled from 'styled-components';

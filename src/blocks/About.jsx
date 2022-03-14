@@ -1,4 +1,4 @@
-import {Container, Layout, Section, Title} from '@/components';
+import {Container, Layout, Section, Title} from '@/ui';
 import styled from 'styled-components';
 
 const Advantages = ({ data, ...rest }) => {

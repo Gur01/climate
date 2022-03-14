@@ -1,6 +1,6 @@
-import { Container, Layout } from '@/components';
+import { Logo } from '@/components';
+import { Container, Layout } from '@/ui';
 import styled from 'styled-components';
-import Logo from '../elements/Logo';
 
 const Footer = () => {
     return (

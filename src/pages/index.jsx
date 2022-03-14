@@ -1,14 +1,8 @@
-import { Modal } from '@/components';
+import { About, Advantages, Feedback, Footer, Header, Services } from '@/blocks';
+import { ContactForm, ContactFormSuccess } from '@/components';
 import { useModal } from '@/context';
 import { data } from '@/data';
-import About from './Main/components/About';
-import Advantages from './Main/components/Advantages';
-import Feedback from './Main/components/Feedback';
-import Footer from './Main/components/Footer';
-import Header from './Main/components/Header';
-import Services from './Main/components/Services';
-import ContactForm from './Main/elements/ContactForm';
-import ContactFormSuccess from './Main/elements/ContactFormSuccess';
+import { Modal } from '@/ui';
 
 export const getStaticProps = async () => {
     return {
@@ -23,7 +17,7 @@ export default function Home({
     feedback,
     about
 }) {
-    const {isOpenedModal, wasSendForm} = useModal();
+    const { isOpenedModal, wasSendForm } = useModal();
 
     return (
         <>

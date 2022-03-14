@@ -1,12 +1,10 @@
-import { Container, Section, Title } from '@/components';
+import { CustomSwiper, FeedbackCard, SwiperNavigation } from '@/components';
+import { Container, Section, Title } from '@/ui';
 import styled from 'styled-components';
 import "swiper/css";
 import "swiper/css/navigation";
 import 'swiper/css/scrollbar';
 import { SwiperSlide } from "swiper/react";
-import CustomSwiper from '../elements/CustomSwiper';
-import FeedbackCard from '../elements/FeedbackCard';
-import SwiperNavigation from "../elements/SwiperNavigation";
 
 const Feedback = ({ data, ...rest }) => {
     const {title, items} = data;

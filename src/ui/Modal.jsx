@@ -27,7 +27,11 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
 	align-items: center;
-    z-index: 1;
+    z-index: 1000;
+
+    @media screen and (min-width: 768px) {
+        z-index: 1;
+    }
 `
 
 const Background = styled.div`
@@ -42,7 +46,17 @@ const Background = styled.div`
 `
 
 const StyledModal = styled.div`
-    width: 580px;
     background-color: #fff;
     z-index: 1001;
+    width: 100%;
+    height: 100%;
+    
+    @media screen and (min-width: 768px) {
+        width: 580px;
+        height: auto;
+        flex-direction: row;
+        align-content: center;
+        margin-bottom: 0;
+        align-items: center;
+    }
 `

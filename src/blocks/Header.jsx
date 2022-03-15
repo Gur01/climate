@@ -81,7 +81,7 @@ const Header = ({ data }) => {
                                             <LeftSideInner>
                                                 <HeaderTitle dangerouslySetInnerHTML={{__html: slide?.title}} />
                                                 <HeaderSubTitle>{slide.subTitle}</HeaderSubTitle>
-                                                <Button onClick={()=> setIsOpenedModal(true)}>Заказать звонок</Button>
+                                                <HeaderButton onClick={()=> setIsOpenedModal(true)}>Заказать звонок</HeaderButton>
                                             </LeftSideInner>
                                         </HeaderText>
                                     </Container>
@@ -98,6 +98,7 @@ const Header = ({ data }) => {
                             <Phone>{phone}</Phone>
                             <SubPhone>{subPhone}</SubPhone>
                         </ContactBlock>
+                        <StyledButton onClick={()=> setIsOpenedModal(true)}>Заказать звонок</StyledButton>
                         <SwiperNavigation className="header" />
                     </HeaderBottomInner>
                 </Container>
@@ -247,7 +248,11 @@ const HeaderSubTitle = styled.h2`
     color: #fff;
     font-weight: 400;
     line-height: 24px;
-    margin-bottom: 40px;
+    margin-bottom:100px;
+    
+    @media screen and (min-width: 768px) {
+        margin-bottom: 40px;
+    }
 `
 
 
@@ -363,10 +368,15 @@ const ContactBlock = styled.div`
 const HeaderBottomInner = styled.div`
     display: flex;
     width: 100%;
-    justify-content: flex-end;
-    align-items: flex-start;
     margin-bottom: 18px;
+    justify-content: space-between;
+    align-items: flex-end;
     
+    @media screen and (min-width: 768px) {
+        justify-content: flex-end;
+        align-items: center;
+    }
+
     @media screen and (min-width: 1024px) {
         justify-content: space-between;
         margin-bottom: 0;
@@ -391,5 +401,21 @@ const HeaderBottomInner = styled.div`
 
     > * {
         width: 50%;
+    }
+`
+
+const StyledButton = styled(Button)`
+    width: auto;
+    display: inline-block;
+    
+    @media screen and (min-width: 768px) {
+        display: none;
+    }
+`
+const HeaderButton = styled(Button)`
+    display: none;
+    
+    @media screen and (min-width: 768px) {
+        display: inline-block;
     }
 `

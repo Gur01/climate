@@ -1,12 +1,15 @@
+import { useModal } from '@/context';
 import { Button } from '@/ui';
 import styled from 'styled-components';
 
 const Banner = ({ title, subTitle, ...rest }) => {
+    const {setIsOpenedModal} = useModal();
+
     return (
         <StyledBanner {...rest}>
             <Title dangerouslySetInnerHTML={{__html: title}} />
             <Description>{subTitle}</Description>
-            <Button>Получить скидку</Button>
+            <Button onClick={()=> setIsOpenedModal(true)}>Получить скидку</Button>
         </StyledBanner>
     )
 }

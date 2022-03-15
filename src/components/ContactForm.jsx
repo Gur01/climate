@@ -111,8 +111,12 @@ const ContactForm = () => {
 export default ContactForm;
 
 const StyledForm = styled.form`
-    padding: 60px;
+    padding: 60px 40px 30px;
     position: relative;
+    
+    @media screen and (min-width: 768px) {
+        padding: 60px;
+    }
 `;
 
 const Title = styled.div`

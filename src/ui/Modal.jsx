@@ -50,6 +50,7 @@ const StyledModal = styled.div`
     z-index: 1001;
     width: 100%;
     height: 100%;
+    overflow-y: scroll;
     
     @media screen and (min-width: 768px) {
         width: 580px;

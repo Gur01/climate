@@ -1,58 +1,18 @@
-import { CustomSwiper, Logo, SwiperNavigation } from '@/components';
+import { CustomSwiper, Header, SwiperNavigation } from '@/components';
 import { useModal } from '@/context';
-import { useClickOutside } from '@/hooks/useClickOutside';
 import { Button, Container } from '@/ui';
-import { useRef, useState } from 'react';
 import styled from 'styled-components';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
 import { SwiperSlide } from 'swiper/react';
 
-const Header = ({ data }) => {
+const MainHeader = ({ data }) => {
     const { phone, slides, subPhone } = data;
-    const [isOpenHamburger, setOpenHamburger] = useState(false);
-    const {setIsOpenedModal} = useModal();
-
-    const navRef = useRef(null);
-    const buttonRef = useRef(null);
-    const headerRef = useRef(null);
-
-    useClickOutside(navRef, (e) => {
-        e.stopPropagation();
-
-        const body = document.body;
-        body.style.overflowY = 'auto';
-
-        setOpenHamburger(false);
-    }, buttonRef)
-
-    const handleHamburger = (e) => {
-        e.stopPropagation();
-        const body = document.body;
-
-        if (!isOpenHamburger) {
-            body.style.overflowY = 'hidden';
-        } else {
-            body.style.overflowY = 'auto';
-        }
-
-        setOpenHamburger(!isOpenHamburger)
-    }
+    const { setIsOpenedModal } = useModal();
 
     return (
-        <StyledHeader ref={headerRef}>
-            <HeaderTop>
-                <StyledContainer>
-                    <Logo />
-
-                    <Hamburger onClick={handleHamburger} isOpenHamburger={isOpenHamburger} ref={buttonRef} >
-                        <span></span>
-                    </Hamburger>
-
-                </StyledContainer>
-            </HeaderTop>
-
+        <Header>
             <CustomSwiper
                 delay={0}
                 navigation={{
@@ -79,9 +39,9 @@ const Header = ({ data }) => {
                                     <Container>
                                         <HeaderText blocks={2}>
                                             <LeftSideInner>
-                                                <HeaderTitle dangerouslySetInnerHTML={{__html: slide?.title}} />
+                                                <HeaderTitle dangerouslySetInnerHTML={{ __html: slide?.title }} />
                                                 <HeaderSubTitle>{slide.subTitle}</HeaderSubTitle>
-                                                <HeaderButton onClick={()=> setIsOpenedModal(true)}>Заказать звонок</HeaderButton>
+                                                <HeaderButton onClick={() => setIsOpenedModal(true)}>Заказать звонок</HeaderButton>
                                             </LeftSideInner>
                                         </HeaderText>
                                     </Container>
@@ -98,28 +58,16 @@ const Header = ({ data }) => {
                             <Phone>{phone}</Phone>
                             <SubPhone>{subPhone}</SubPhone>
                         </ContactBlock>
-                        <StyledButton onClick={()=> setIsOpenedModal(true)}>Заказать звонок</StyledButton>
+                        <StyledButton onClick={() => setIsOpenedModal(true)}>Заказать звонок</StyledButton>
                         <SwiperNavigation className="header" />
                     </HeaderBottomInner>
                 </Container>
             </HeaderBottom>
-
-            <NavigationOverlay isOpenHamburger={isOpenHamburger}>
-                <Navigation ref={navRef}>
-                    <ul>
-                        <li>Главная</li>
-                        <li>О нас</li>
-                        <li>FAQ</li>
-                        <li>Статьи</li>
-                    </ul>
-                </Navigation>
-            </NavigationOverlay>
-
-        </StyledHeader>
+        </Header>
     )
 }
 
-export default Header;
+export default MainHeader;
 
 const HeaderBackground = styled.div`
     position: absolute;
@@ -127,33 +75,8 @@ const HeaderBackground = styled.div`
     width: 100%;
 `
 
-const StyledHeader = styled.header`
-    height: 768px;
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-    
-    @media screen and (min-width: 1024px) {
-        height: 810px;
-    }
-`
-
-const HeaderTop = styled.div`
-    position: absolute;
-    left: 0;
-    right: 0;
-    padding: 25px 0;
-    /* background-color: #2C4DC3; */
-    z-index: 101;
-`
-
 const HeaderText = styled.div`
     width: 100%;
-`
-
-const StyledContainer = styled(Container)`
-    display: flex;
-    justify-content: space-between;
 `
 
 const HeaderCard = styled.div`
@@ -193,7 +116,7 @@ const RightSide = styled.div`
     overflow: hidden;
     background-size: cover;
     background-position: center;
-    ${({image}) => image && `background-image: linear-gradient(to top, rgba(44, 77, 195, 0.3), rgba(44, 77, 195, 0.3)), url(${image})`};
+    ${({ image }) => image && `background-image: linear-gradient(to top, rgba(44, 77, 195, 0.3), rgba(44, 77, 195, 0.3)), url(${image})`};
     position: relative;
     
     @media screen and (min-width: 1024px) {
@@ -220,7 +143,6 @@ const LeftSideInner = styled.div`
 
 
 `
-
 
 const HeaderTitle = styled.h1`
     color: #fff;
@@ -255,8 +177,6 @@ const HeaderSubTitle = styled.h2`
     }
 `
 
-
-
 const HeaderBottom = styled.div`
     position: absolute;
     bottom: 32px;
@@ -264,86 +184,6 @@ const HeaderBottom = styled.div`
     right: 0;
     z-index: 1;
 `
-
-const Hamburger = styled.div`
-    border: 2px solid #C4C4C4;
-    width: 56px;
-    height: 56px;
-    display: flex;
-    justify-content: center;
-	align-items: center;
-    cursor: pointer;
-    position: relative;
-
-    span {
-        width: 18px;
-        height: 2px;
-        background-color: #fff;
-        position: relative;
-        visibility: ${({ isOpenHamburger }) => isOpenHamburger ? 'hidden' : 'visible'};
-        transition: visibility 0s, top .3s ease, transform .3s ease;
-        
-        &:before,
-        &:after {
-            width: 100%;
-            height: inherit;
-            position: absolute;
-            display: inline-block;
-            content: '';
-            background-color: inherit;
-            visibility: visible;
-            transition: inherit;
-        }
-
-        &:before {
-            top: ${({ isOpenHamburger }) => isOpenHamburger ? '0' : '-6px'};
-            transform: ${({ isOpenHamburger }) => isOpenHamburger ? 'rotate(-45deg)' : 'rotate(0)'}
-        }
-
-        &:after {
-            top: ${({ isOpenHamburger }) => isOpenHamburger ? '0' : '6px'};
-            transform: ${({ isOpenHamburger }) => isOpenHamburger ? 'rotate(45deg)' : 'rotate(0)'}
-
-        }
-    }
-`
-
-
-const NavigationOverlay = styled.div`
-    position: fixed;
-    width: 100%;
-    height: 100%;    
-    right: ${({ isOpenHamburger }) => isOpenHamburger ? '0' : '-100%'};
-    transition: all 0.3s ease-in-out;
-    z-index: 100;
-    top: 0;
-`
-
-const Navigation = styled.div`
-    top: 0;
-    height: 100%;
-    background-color: #0F0F10;
-    position: absolute;
-    right: 0;
-    width: 100%;
-    
-    @media screen and (min-width: 1024px) {
-        width: calc((100vw - 1230px) / 2 + 400px);
-    }
-
-
-    ul {
-        padding-top: 121px;
-        padding-left: 100px;
-        list-style-type: none;
-        color: #fff;
-        
-        li {
-            padding-bottom: 50px;
-            cursor: pointer;
-        }
-    }
-`;
 
 const Phone = styled.div`
     font-size: 20px;

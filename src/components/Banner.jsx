@@ -2,14 +2,14 @@ import { useModal } from '@/context';
 import { Button } from '@/ui';
 import styled from 'styled-components';
 
-const Banner = ({ title, subTitle, ...rest }) => {
+const Banner = ({ title, subTitle, buttonText, ...rest }) => {
     const {setIsOpenedModal} = useModal();
-
+    
     return (
         <StyledBanner {...rest}>
             <Title dangerouslySetInnerHTML={{__html: title}} />
             <Description>{subTitle}</Description>
-            <Button onClick={()=> setIsOpenedModal(true)}>Получить скидку</Button>
+            <Button onClick={()=> {setIsOpenedModal(true); console.log('hello')}}>{buttonText}</Button>
         </StyledBanner>
     )
 }
@@ -18,7 +18,6 @@ export default Banner;
 
 const StyledBanner = styled.div`
     background-color: #2C4DC3;
-    margin-top: 60px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -34,7 +33,6 @@ const StyledBanner = styled.div`
     }
     
     @media screen and (min-width: 1024px) {
-        margin-top: 120px;
         flex-direction: row;
         align-content: center;
         margin-bottom: 0;

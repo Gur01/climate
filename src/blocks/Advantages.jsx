@@ -3,7 +3,7 @@ import { Container, Group, Section, Title } from '@/ui';
 import styled from 'styled-components';
 
 const Advantages = ({ data }) => {
-    const {title, subTitle, items, banner} = data;
+    const {title, subTitle, items} = data;
 
     return (
         <Section>
@@ -21,7 +21,6 @@ const Advantages = ({ data }) => {
                     </AdvantagesGroup>
 
                 </StyledGroup>
-                <Banner title={banner?.title} subTitle={banner?.subTitle} />
             </Container>
 
         </Section>

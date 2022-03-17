@@ -2,13 +2,13 @@ import { Container, Section, Title } from '@/ui';
 import { SwiperSlide } from "swiper/react";
 import { CustomSwiper, ServicesCard, SwiperNavigation } from '@/components';
 
-const Services = ({ data, ...rest }) => {
+const Services = ({ data, noTitle, ...rest }) => {
     const {title, items} = data;
 
     return (
         <Section {...rest}>
             <Container>
-                <Title style={{marginBottom: '60px'}} dangerouslySetInnerHTML={{__html: title}} />
+               {!noTitle && <Title style={{marginBottom: '60px'}} dangerouslySetInnerHTML={{__html: title}} />}
 
                 <CustomSwiper
                     spaceBetween={16}

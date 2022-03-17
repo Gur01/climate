@@ -8,7 +8,7 @@ const ServicesCard = ({ image, title, subTitle, ...rest }) => {
             <TextBlock>
                 <Title>{title}</Title>
                 <Description>{subTitle}</Description>
-                <Button>Заказать услугу</Button>
+                <Button>Подробнее</Button>
             </TextBlock>
         </Card>
     )
@@ -42,13 +42,12 @@ const TextBlock = styled.div`
 `
 
 const Card = styled.div`
-
     img {
         vertical-align: bottom;
         width: 100%;
     }
 
-    &:hover {
+    /* &:hover {
         ${TextBlock} {
             background-color: #2C4DC3;
         }
@@ -60,7 +59,7 @@ const Card = styled.div`
         ${Description} {
             color: #D5DBF3;
         }
-    }
+    } */
 `;
 
 

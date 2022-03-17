@@ -24,7 +24,7 @@ export default SwiperNavigation;
 const Navigation = styled.div`
     display: flex;
     justify-content: flex-end;
-    margin-top: 20px;
+    margin-top: 40px;
 
     .prev-mobile, 
     .next-mobile {

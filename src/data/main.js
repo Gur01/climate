@@ -40,37 +40,12 @@ const advantages = {
             subTitle: 'Разнообразный и богатый опыт говорит нам, что начало повседневной работы по.'
         },
     ],
-    banner: {
-        title: 'Персональная <span>Скидка 10%</span>',
-        subTitle: 'Явные признаки победы институционализации разоблачены. Идейные соображения.'
-}
 }
 
-const services = {
-    title: 'Наши <span>услуги</span>',
-    items: [
-        {
-            image: './images/services1.jpg',
-            title: 'Ремонт кондиционера',
-            subTitle: 'Ваш кондиционер не холодит? Тогда Вам сюда.'
-        },
-        {
-            image: './images/services1.jpg',
-            title: 'Ремонт кондиционера',
-            subTitle: 'Ваш кондиционер не холодит? Тогда Вам сюда.'
-        },
-        {
-            image: './images/services1.jpg',
-            title: 'Ремонт кондиционера',
-            subTitle: 'Ваш кондиционер не холодит? Тогда Вам сюда.'
-        },
-        {
-            image: './images/services1.jpg',
-            title: 'Ремонт кондиционера',
-            subTitle: 'Ваш кондиционер не холодит? Тогда Вам сюда.'
-        },
-    ]
-
+const banner = {
+    title: 'Персональная <span>Скидка 10%</span>',
+    subTitle: 'Явные признаки победы институционализации разоблачены. Идейные соображения.',
+    buttonText: 'Получить скидку'
 }
 
 const feedback = {
@@ -110,10 +85,10 @@ const about = {
     `
 }
 
-export const data = {
+export const main = {
     header,
     advantages,
-    services,
     feedback,
-    about
+    about, 
+    banner
 }

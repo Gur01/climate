@@ -1,6 +1,7 @@
 import { Logo } from '@/components';
 import { useClickOutside } from '@/hooks/useClickOutside';
 import { Container } from '@/ui';
+import { useRouter } from 'next/router';
 import { useRef, useState } from 'react';
 import styled from 'styled-components';
 import 'swiper/css';
@@ -9,7 +10,7 @@ import 'swiper/css/scrollbar';
 
 const Header = ({ children, className }) => {
     const [isOpenHamburger, setOpenHamburger] = useState(false);
-
+    const router = useRouter()
     const navRef = useRef(null);
     const buttonRef = useRef(null);
     const headerRef = useRef(null);
@@ -17,8 +18,8 @@ const Header = ({ children, className }) => {
     useClickOutside(navRef, (e) => {
         e.stopPropagation();
 
-        const body = document.body;
-        body.style.overflowY = 'auto';
+        // const body = document.body;
+        // body.style.overflowY = 'auto';
 
         setOpenHamburger(false);
     }, buttonRef)
@@ -27,11 +28,11 @@ const Header = ({ children, className }) => {
         e.stopPropagation();
         const body = document.body;
 
-        if (!isOpenHamburger) {
-            body.style.overflowY = 'hidden';
-        } else {
-            body.style.overflowY = 'auto';
-        }
+        // if (!isOpenHamburger) {
+        //     body.style.overflowY = 'hidden';
+        // } else {
+        //     body.style.overflowY = 'auto';
+        // }
 
         setOpenHamburger(!isOpenHamburger)
     }
@@ -40,7 +41,7 @@ const Header = ({ children, className }) => {
         <StyledHeader ref={headerRef} className={className}>
             <HeaderTop>
                 <StyledContainer>
-                    <Logo />
+                    <Logo onClick={()=> router.push('/')}/>
 
                     <Hamburger onClick={handleHamburger} isOpenHamburger={isOpenHamburger} ref={buttonRef} >
                         <span></span>
@@ -52,8 +53,8 @@ const Header = ({ children, className }) => {
             <NavigationOverlay isOpenHamburger={isOpenHamburger}>
                 <Navigation ref={navRef}>
                     <ul>
-                        <li>Главная</li>
-                        <li>О нас</li>
+                        <li onClick={()=> router.push('/')}>Главная</li>
+                        <li onClick={()=> router.push('about')}>О нас</li>
                         <li>FAQ</li>
                         <li>Статьи</li>
                     </ul>

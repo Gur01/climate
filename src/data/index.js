@@ -1,3 +1,3 @@
-export { about } from "./about";
-export { main } from "./main";
-export { services } from "./services";
+export { about } from './about';
+export { main } from './main';
+export { services } from './services';

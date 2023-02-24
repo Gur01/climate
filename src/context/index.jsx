@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState } from "react";
 
 const AppContext = createContext();
 
@@ -7,7 +7,9 @@ export function AppWrapper({ children }) {
   const [wasSendForm, setWasSendForm] = useState(false);
 
   return (
-    <AppContext.Provider value={{ isOpenedModal, setIsOpenedModal, wasSendForm, setWasSendForm}}>
+    <AppContext.Provider
+      value={{ isOpenedModal, setIsOpenedModal, wasSendForm, setWasSendForm }}
+    >
       {children}
     </AppContext.Provider>
   );

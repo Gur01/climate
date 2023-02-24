@@ -1,20 +1,15 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Section = ({ children, ...props }) => {
-    return (
-        <StyledSection {...props}>
-            {children}
-        </StyledSection>
-    )
-}
+  return <StyledSection {...props}>{children}</StyledSection>;
+};
 
 export default Section;
 
 const StyledSection = styled.section`
-    margin-top: 100px;
-    
-    @media screen and (min-width: 1024px) {
-        margin-top: 120px;
-    }
-`;
+  margin-top: 100px;
 
+  @media screen and (min-width: 1024px) {
+    margin-top: 120px;
+  }
+`;

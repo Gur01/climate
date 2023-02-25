@@ -8,7 +8,7 @@ const Logo = (props) => {
                 <div>
                     <span>air</span>Сleaning
                 </div>
-                <div>Ремонт кондиционеров</div>
+                <div>Ремонт и <br />обслуживание кондиционеров</div>
             </LogoTitle>
         </StyledLogo>
     );
@@ -28,6 +28,7 @@ const LogoImage = styled.img`
 
 const LogoTitle = styled.div`
     color: #fff;
+    flex-shrink: 0;
 
     > div:first-child {
         font-size: 18px;
@@ -42,6 +43,6 @@ const LogoTitle = styled.div`
         font-family: inherit;
         font-size: 12px;
         font-weight: 400;
-        color: #9f9f9f;
+        color: #eee;
     }
 `;

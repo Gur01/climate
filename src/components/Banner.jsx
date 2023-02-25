@@ -1,5 +1,5 @@
 import { useModal } from '@/context';
-import { Button } from '@/ui';
+import { Button, Title } from '@/ui';
 import styled from 'styled-components';
 
 const Banner = ({ title, subTitle, buttonText, ...rest }) => {
@@ -7,7 +7,7 @@ const Banner = ({ title, subTitle, buttonText, ...rest }) => {
 
     return (
         <StyledBanner {...rest}>
-            <Title dangerouslySetInnerHTML={{ __html: title }} />
+            <StyledTitle dangerouslySetInnerHTML={{ __html: title }} />
             <Description>{subTitle}</Description>
             <Button
                 onClick={() => {
@@ -47,14 +47,9 @@ const StyledBanner = styled.div`
     }
 `;
 
-const Title = styled.div`
+const StyledTitle = styled(Title)`
     font-size: 40px;
     color: #fff;
-
-    span {
-        text-decoration: underline;
-        text-decoration-color: #ffd337;
-    }
 `;
 
 const Description = styled.div`

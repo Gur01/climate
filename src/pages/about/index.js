@@ -1,4 +1,4 @@
-import { BannerSection, Footer, PageContent, PageHeader, Services } from '@/blocks';
+import { BannerSection, Footer, PageContent, PageHeader, Services } from '@/sections';
 import { ContactForm, ContactFormSuccess } from '@/components';
 import { useModal } from '@/context';
 import { about, services } from '@/data';

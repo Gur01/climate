@@ -1,6 +1,6 @@
 import { CustomSwiper, Header, SwiperNavigation } from '@/components';
 import { useModal } from '@/context';
-import { Button, Container } from '@/ui';
+import { Button, Container, Title } from '@/ui';
 import { forwardRef } from 'react';
 import styled from 'styled-components';
 import 'swiper/css';
@@ -39,7 +39,7 @@ const MainHeader = forwardRef(({ data }, ref) => {
                                     <Container>
                                         <HeaderText blocks={2}>
                                             <LeftSideInner>
-                                                <HeaderTitle dangerouslySetInnerHTML={{ __html: slide?.title }} />
+                                                <HeaderTitle forwardedAs="h1" dangerouslySetInnerHTML={{ __html: slide?.title }} />
                                                 <HeaderSubTitle>{slide.subTitle}</HeaderSubTitle>
                                                 <HeaderButton onClick={() => setIsOpenedModal(true)}>
                                                     Заказать звонок
@@ -157,7 +157,7 @@ const LeftSideInner = styled.div`
     }
 `;
 
-const HeaderTitle = styled.h1`
+const HeaderTitle = styled(Title)`
     color: #fff;
     font-weight: 400;
     margin-bottom: 20px;
@@ -170,11 +170,11 @@ const HeaderTitle = styled.h1`
         letter-spacing: 2.1px;
         font-size: 50px;
     }
-
+/* 
     span {
         text-decoration: underline;
         text-decoration-color: #ffd337;
-    }
+    } */
 `;
 
 const HeaderSubTitle = styled.h2`

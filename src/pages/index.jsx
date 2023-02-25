@@ -1,4 +1,4 @@
-import { About, Advantages, Feedback, Footer, MainHeader, Services, BannerSection, Navigation } from '@/blocks';
+import { About, Advantages, Feedback, Footer, MainHeader, Services, BannerSection, Navigation } from '@/sections';
 import { ContactForm, ContactFormSuccess } from '@/components';
 import { useModal } from '@/context';
 import { main, services } from '@/data';

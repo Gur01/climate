@@ -1,14 +1,18 @@
 import { forwardRef } from 'react';
 import styled from 'styled-components';
+import { useRouter } from 'next/router'
 
 const Menu = forwardRef(({ className }, ref) => {
+    const router = useRouter();
+
     return (
         <StyledMenu ref={ref} className={className}>
             <ul>
                 <li onClick={() => router.push('/')}>Главная</li>
                 <li onClick={() => router.push('about')}>О нас</li>
-                <li>FAQ</li>
-                <li>Статьи</li>
+                <li>Услуги</li>
+                <li>Контакты</li>
+                <li>Партнерам</li>
             </ul>
         </StyledMenu>
     );

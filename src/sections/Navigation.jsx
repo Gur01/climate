@@ -64,11 +64,11 @@ export const Navigation = ({ className, headerRef }) => {
         e.stopPropagation();
         const body = document.body;
 
-        // if (!isOpenHamburger) {
-        //     body.style.overflowY = 'hidden';
-        // } else {
-        //     body.style.overflowY = 'auto';
-        // }
+        if (!isOpenHamburger) {
+            body.style.overflowY = 'hidden';
+        } else {
+            body.style.overflowY = 'auto';
+        }
 
         setOpenHamburger(!isOpenHamburger);
     };
@@ -118,7 +118,7 @@ export const NavigationTop = styled.nav`
     position: ${({ animatePosition }) => animatePosition ? 'absolute' : 'fixed'};
     left: 0;
     right: 0;
-    padding: 25px 0;
+    padding: ${({ animatePosition }) => animatePosition ? '25px 0' : '10px 0'};
     /* background-color: #2C4DC3; */
     z-index: 101;
     /* box-shadow: 0px 5px 10px 0px #2c4dc3; */
@@ -129,7 +129,6 @@ export const NavigationTop = styled.nav`
     animation-name: ${({ isStickyMenu }) => isStickyMenu ? slideDown : slideUp};
 
     ${({ isStickyMenu }) => isStickyMenu && 'background-color: #2C4DC3;'};
-
 `;
 
 const StyledContainer = styled(Container)`

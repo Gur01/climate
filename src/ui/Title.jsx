@@ -11,8 +11,20 @@ const StyledTitle = styled.h3`
     font-size: 32px;
 
     span {
-        text-decoration: underline;
-        text-decoration-color: #ffd337;
+        position: relative;
+        z-index: 10;
+
+        &:after {
+            height: 3px;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #ffd337;
+            position: absolute;
+            display: inline-block;
+            content: "";
+            z-index: 0;
+        }
     }
 
     @media screen and (min-width: 540px) {

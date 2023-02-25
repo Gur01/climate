@@ -1,4 +1,3 @@
-import { Header, HeaderTop } from '@/components';
 import styled from 'styled-components';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -16,10 +15,10 @@ const PageHeader = ({ data }) => {
 
 export default PageHeader;
 
-const StyledHeader = styled(Header)`
-    ${HeaderTop} {
+const StyledHeader = styled.div`
+    /* ${HeaderTop} {
         background-color: #2c4dc3;
-    }
+    } */
 `;
 
 const Background = styled.div`

@@ -1,18 +1,19 @@
 import { CustomSwiper, Header, SwiperNavigation } from '@/components';
 import { useModal } from '@/context';
 import { Button, Container } from '@/ui';
+import { forwardRef } from 'react';
 import styled from 'styled-components';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
 import { SwiperSlide } from 'swiper/react';
 
-const MainHeader = ({ data }) => {
+const MainHeader = forwardRef(({ data }, ref) => {
     const { phone, slides, subPhone } = data;
     const { setIsOpenedModal } = useModal();
 
     return (
-        <Header>
+        <StyledHeader ref={ref}>
             <CustomSwiper
                 delay={0}
                 navigation={{
@@ -65,11 +66,23 @@ const MainHeader = ({ data }) => {
                     </HeaderBottomInner>
                 </Container>
             </HeaderBottom>
-        </Header>
+        </StyledHeader>
     );
-};
+})
+
 
 export default MainHeader;
+
+const StyledHeader = styled.header`
+    height: 768px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+
+    @media screen and (min-width: 1024px) {
+        height: 810px;
+    }
+`;
 
 const HeaderBackground = styled.div`
     position: absolute;

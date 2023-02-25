@@ -7,3 +7,4 @@ export { default as MainHeader } from './MainHeader';
 export { default as PageContent } from './PageContent';
 export { default as PageHeader } from './PageHeader';
 export { default as Services } from './Services';
+export { Navigation } from './Navigation';

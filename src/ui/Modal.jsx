@@ -28,9 +28,9 @@ const Wrapper = styled.div`
     align-items: center;
     z-index: 1000;
 
-    @media screen and (min-width: 768px) {
+    /* @media screen and (min-width: 768px) {
         z-index: 1;
-    }
+    } */
 `;
 
 const Background = styled.div`

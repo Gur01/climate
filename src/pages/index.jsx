@@ -1,8 +1,10 @@
-import { About, Advantages, Feedback, Footer, MainHeader, Services, BannerSection } from '@/blocks';
+import { About, Advantages, Feedback, Footer, MainHeader, Services, BannerSection, Navigation } from '@/blocks';
 import { ContactForm, ContactFormSuccess } from '@/components';
 import { useModal } from '@/context';
 import { main, services } from '@/data';
 import { Modal } from '@/ui';
+import { useRef } from 'react';
+import styled from 'styled-components';
 
 export const getStaticProps = async () => {
     return {
@@ -12,10 +14,12 @@ export const getStaticProps = async () => {
 
 export default function Home({ header, advantages, services, feedback, about, banner }) {
     const { isOpenedModal, wasSendForm } = useModal();
+    const headerRef = useRef(null)
 
     return (
         <>
-            <MainHeader data={header} />
+            <Navigation headerRef={headerRef}/>
+            <MainHeader data={header} ref={headerRef}/>
             <Advantages data={advantages} />
             <BannerSection data={banner} />
             = <Services data={services} />

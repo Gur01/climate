@@ -36,30 +36,9 @@ const Navigation = styled.div`
         align-items: center;
         cursor: pointer;
 
-        @media screen and (max-width: 539px) {
-            border: none;
-            position: absolute;
-            top: 25%;
-            z-index: 1;
-            opacity: 0.8;
-
-            svg path {
-                stroke: #0F0F10 !important;
-            }
-
-        }
-
         svg path {
             stroke: ${({ theme }) => (theme === 'black' ? '#fff' : '#0F0F10')};
         }
-    }
-
-    .prev-mobile {
-        left: 10px;
-    }
-
-    .next-mobile {
-        right: 10px;
     }
 
     @media screen and (min-width: 450px) {

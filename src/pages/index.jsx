@@ -22,7 +22,7 @@ export default function Home({ header, advantages, services, feedback, about, ba
             <MainHeader data={header} ref={headerRef}/>
             <Advantages data={advantages} />
             <BannerSection data={banner} />
-            = <Services data={services} />
+            <Services data={services} />
             <Feedback data={feedback} />
             <About data={about} />
             <Footer />

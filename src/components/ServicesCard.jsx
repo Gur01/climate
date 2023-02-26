@@ -32,12 +32,12 @@ const Description = styled.p`
     color: #0f0f10;
     display: flex;
     justify-content: center;
-    width: 80%;
+    width: 100%;
     letter-spacing: 0.3px;
 `;
 
 const TextBlock = styled.div`
-    padding: 45px;
+    padding: 25px 10px;
 `;
 
 const Card = styled.div`

@@ -23,7 +23,7 @@ export const Navigation = ({ className, headerRef }) => {
 
         const options = {
             rootMargin: '0px',
-            threshold: 0
+            threshold: 0.4
         }
 
         const callback = (entries) => {
@@ -190,7 +190,7 @@ const MenuOverlay = styled.div`
     right: ${({ isOpenHamburger }) => (isOpenHamburger ? '0' : '-100%')};
     transition: all 0.3s ease-in-out;
     top: 0;
-    display: block;
+    display: ${({ isOpenHamburger }) => (isOpenHamburger ? 'block' : 'none')};
     
     @media screen and (min-width: 768px) {
         display: none;

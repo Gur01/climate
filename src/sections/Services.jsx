@@ -8,7 +8,7 @@ const Services = ({ data, noTitle, ...rest }) => {
     return (
         <Section {...rest}>
             <Container>
-                {!noTitle && <Title style={{ marginBottom: '60px' }} dangerouslySetInnerHTML={{ __html: title }} />}
+                {!noTitle && <Title style={{ marginBottom: '40px' }} dangerouslySetInnerHTML={{ __html: title }} />}
 
                 <CustomSwiper
                     spaceBetween={16}

@@ -16,7 +16,7 @@ const StyledTitle = styled.h3`
 
         &:after {
             height: 3px;
-            bottom: 0;
+            bottom: -2px;
             left: 0;
             width: 100%;
             background-color: #ffd337;

@@ -28,4 +28,8 @@ export default CustomSwiper;
 const StyledSwiper = styled(Swiper)`
     height: 100%;
     width: 100%;
+
+    .swiper-slide {
+        height: auto;
+    }
 `;

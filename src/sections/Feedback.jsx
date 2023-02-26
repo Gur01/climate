@@ -63,6 +63,11 @@ const StyledSection = styled(Section)`
         padding-top: 120px;
         padding-bottom: 120px;
     }
+
+    .prev-mobile,
+    .next-mobile {
+        top: 45%;
+    }
 `;
 const StyledTitle = styled(Title)`
     margin-bottom: 60px;

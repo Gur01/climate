@@ -74,14 +74,14 @@ const MainHeader = forwardRef(({ data }, ref) => {
 export default MainHeader;
 
 const StyledHeader = styled.header`
-    height: 768px;
+    height: 100vh;
     width: 100%;
     position: relative;
     overflow: hidden;
 
-    @media screen and (min-width: 1024px) {
-        height: 810px;
-    }
+    /* @media screen and (min-width: 1024px) {
+        height: 100vh;
+    } */
 `;
 
 const HeaderBackground = styled.div`

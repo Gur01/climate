@@ -20,7 +20,10 @@ export default FeedbackCard;
 const Card = styled.div`
     background-color: #fff;
     padding: 42px 52px;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 `;
 
 const Text = styled.p`

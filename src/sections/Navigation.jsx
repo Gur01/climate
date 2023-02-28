@@ -17,7 +17,7 @@ export const Navigation = ({ className, headerRef }) => {
     console.log(isStickyMenu);
 
     useEffect(() => {
-        const header = headerRef.current;
+        const header = headerRef?.current;
 
         if(!header) return;
 
@@ -45,7 +45,13 @@ export const Navigation = ({ className, headerRef }) => {
         } else {
             setAnimatePosition(false)
         }
-    }, [isStickyMenu])
+    }, [isStickyMenu]);
+
+    // useEffect(() => {
+    //     if(isStickyMenu) {
+    //         setAnimatePosition(true)
+    //     }
+    // }, [])
 
     useClickOutside(
         menuRef,

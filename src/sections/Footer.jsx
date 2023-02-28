@@ -23,7 +23,7 @@ const Footer = () => {
                 </StyledContainer>
                 <SubFooter>
                     <SubFooterContainer>
-                        <Copyright>Copyright © 2021</Copyright>
+                        <Copyright>Copyright © {new Date().getFullYear()}</Copyright>
                         <Links>Вконтакте</Links>
                     </SubFooterContainer>
                 </SubFooter>

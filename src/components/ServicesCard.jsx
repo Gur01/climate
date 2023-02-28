@@ -34,13 +34,21 @@ const Description = styled.p`
     justify-content: center;
     width: 100%;
     letter-spacing: 0.3px;
+    flex-grow: 1;
 `;
 
 const TextBlock = styled.div`
     padding: 25px 10px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 `;
 
 const Card = styled.div`
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
     img {
         vertical-align: bottom;
         width: 100%;

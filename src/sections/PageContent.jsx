@@ -10,9 +10,9 @@ const PageContent = ({ data }) => {
                 <Container>
                     <Title style={{ marginBottom: '60px' }} dangerouslySetInnerHTML={{ __html: title }} />
                     <Layout columns={5} gap={16}></Layout>
-                    {/* <TextBlock columns={7} >
+                    <TextBlock columns={7} >
                         <div dangerouslySetInnerHTML={{ __html: text }} />
-                    </TextBlock> */}
+                    </TextBlock>
                 </Container>
             </Section>
         </>

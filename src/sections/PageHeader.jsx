@@ -16,9 +16,9 @@ const PageHeader = ({ data }) => {
 export default PageHeader;
 
 const StyledHeader = styled.div`
-    ${HeaderTop} {
+    /* ${HeaderTop} {
         background-color: #2c4dc3;
-    }
+    } */
 `;
 
 const Background = styled.div`

@@ -8,7 +8,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
 import { SwiperSlide } from 'swiper/react';
 
-const MainHeader = forwardRef(({ data }, ref) => {
+export const MainHeader = forwardRef(({ data }, ref) => {
     const { phone, slides, subPhone } = data;
     const { setIsOpenedModal } = useModal();
 
@@ -68,10 +68,9 @@ const MainHeader = forwardRef(({ data }, ref) => {
             </HeaderBottom>
         </StyledHeader>
     );
-})
+});
 
-
-export default MainHeader;
+MainHeader.displayName = "MainHeader";
 
 const StyledHeader = styled.header`
     height: 100vh;

@@ -18,6 +18,8 @@ const Menu = forwardRef(({ className }, ref) => {
     );
 })
 
+Menu.displayName = "Menu";
+
 export default Menu;
 
 const StyledMenu = styled.div`

@@ -1,10 +1,9 @@
-import { About, Advantages, Feedback, Footer, MainHeader, Services, BannerSection, Navigation } from '@/sections';
 import { ContactForm, ContactFormSuccess } from '@/components';
 import { useModal } from '@/context';
 import { main, services } from '@/data';
+import { About, Advantages, BannerSection, Feedback, Footer, MainHeader, Navigation, Services } from '@/sections';
 import { Modal } from '@/ui';
 import { useRef } from 'react';
-import styled from 'styled-components';
 
 export const getStaticProps = async () => {
     return {

@@ -14,12 +14,16 @@ export const Navigation = ({ className, headerRef }) => {
     const menuRef = useRef(null);
     const buttonRef = useRef(null);
 
-    console.log(isStickyMenu);
+    useEffect(() => {
+        const body = document.body;
+        // reset body lock
+        body.style.overflowY = 'auto';
+    }, [])
 
     useEffect(() => {
         const header = headerRef?.current;
 
-        if(!header) return;
+        if (!header) return;
 
         const options = {
             rootMargin: '0px',
@@ -38,8 +42,8 @@ export const Navigation = ({ className, headerRef }) => {
     }, [headerRef])
 
     useEffect(() => {
-        if(!isStickyMenu) {
-            setTimeout(()=> {
+        if (!isStickyMenu) {
+            setTimeout(() => {
                 setAnimatePosition(true)
             }, 300)
         } else {
@@ -218,7 +222,7 @@ const MobileMenu = styled(Menu)`
             padding-bottom: 50px;
             cursor: pointer;
         }
-    } 
+    }
 `
 
 const DesktopMenu = styled(Menu)`
@@ -231,12 +235,12 @@ const DesktopMenu = styled(Menu)`
         display: block;
     }
 
-    ul {
+    > ul {
         
-        li {
+        > li {
             display: inline-block;
             cursor: pointer;
-            margin-left: 25px;
+            margin-left: 0;
         }
     } 
 `

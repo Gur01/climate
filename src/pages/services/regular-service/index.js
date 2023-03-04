@@ -1,17 +1,17 @@
-import { about, services } from '@/data';
+import { services, regularService } from '@/data';
 import { PageTemplate } from '@/templates';
 
 export const getStaticProps = async () => {
     return {
-        props: { ...about, services },
+        props: { ...regularService, services },
     };
 };
 
-const About = (props) => {
+const Cleaning = (props) => {
     return (
         <PageTemplate {...props}/>
     );
 };
 
-export default About;
+export default Cleaning;
 

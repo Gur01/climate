@@ -8,7 +8,7 @@ const PageContent = ({ data }) => {
         <>
             <Section>
                 <Container>
-                    <Title style={{ marginBottom: '60px' }} dangerouslySetInnerHTML={{ __html: title }} />
+                    <StyledTitle style={{ marginBottom: '60px' }} dangerouslySetInnerHTML={{ __html: title }} />
                     <Layout columns={5} gap={16}></Layout>
                     <TextBlock columns={7} >
                         <div dangerouslySetInnerHTML={{ __html: text }} />
@@ -22,9 +22,9 @@ const PageContent = ({ data }) => {
 export default PageContent;
 
 const StyledTitle = styled(Title)`
-    font-size: 26px;
-    color: #0f0f10;
-    margin-bottom: 40px;
+    @media screen and (min-width: 1024px) {
+        max-width: 50%;
+    }
 `;
 
 const TextBlock = styled(Layout)`

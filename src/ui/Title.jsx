@@ -1,10 +1,8 @@
 import styled from 'styled-components';
 
-const Title = ({ children, ...props }) => {
+export const Title = ({ children, ...props }) => {
     return <StyledTitle {...props}>{children}</StyledTitle>;
 };
-
-export default Title;
 
 const StyledTitle = styled.h3`
     font-weight: normal;
@@ -22,7 +20,7 @@ const StyledTitle = styled.h3`
             background-color: #ffd337;
             position: absolute;
             display: inline-block;
-            content: "";
+            content: '';
             z-index: 0;
         }
     }

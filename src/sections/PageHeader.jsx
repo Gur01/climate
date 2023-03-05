@@ -6,9 +6,7 @@ import 'swiper/css/scrollbar';
 const PageHeader = ({ data }) => {
     const { image } = data;
 
-    return (
-        <Background image={image} />
-    );
+    return <Background image={image} />;
 };
 
 export default PageHeader;

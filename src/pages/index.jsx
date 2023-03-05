@@ -13,12 +13,12 @@ export const getStaticProps = async () => {
 
 export default function Home({ header, advantages, services, feedback, about, banner }) {
     const { isOpenedModal, wasSendForm } = useModal();
-    const headerRef = useRef(null)
+    const headerRef = useRef(null);
 
     return (
         <>
-            <Navigation headerRef={headerRef}/>
-            <MainHeader data={header} ref={headerRef}/>
+            <Navigation headerRef={headerRef} />
+            <MainHeader data={header} ref={headerRef} />
             <Advantages data={advantages} />
             <BannerSection data={banner} />
             <Services data={services} />

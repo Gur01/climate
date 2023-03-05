@@ -39,7 +39,10 @@ export const MainHeader = forwardRef(({ data }, ref) => {
                                     <Container>
                                         <HeaderText blocks={2}>
                                             <LeftSideInner>
-                                                <HeaderTitle forwardedAs="h1" dangerouslySetInnerHTML={{ __html: slide?.title }} />
+                                                <HeaderTitle
+                                                    forwardedAs="h1"
+                                                    dangerouslySetInnerHTML={{ __html: slide?.title }}
+                                                />
                                                 <HeaderSubTitle>{slide.subTitle}</HeaderSubTitle>
                                                 <HeaderButton onClick={() => setIsOpenedModal(true)}>
                                                     Заказать звонок
@@ -70,7 +73,7 @@ export const MainHeader = forwardRef(({ data }, ref) => {
     );
 });
 
-MainHeader.displayName = "MainHeader";
+MainHeader.displayName = 'MainHeader';
 
 const StyledHeader = styled.header`
     height: 100vh;
@@ -169,7 +172,7 @@ const HeaderTitle = styled(Title)`
         letter-spacing: 2.1px;
         font-size: 50px;
     }
-/* 
+    /* 
     span {
         text-decoration: underline;
         text-decoration-color: #ffd337;

@@ -50,7 +50,7 @@ const StyledBanner = styled.div`
 const StyledTitle = styled(Title)`
     font-size: 40px;
     color: #fff;
-    
+
     @media screen and (min-width: 1024px) {
         width: 30%;
     }
@@ -60,7 +60,7 @@ const Description = styled.div`
     color: #cbd2f0;
     line-height: 24px;
     margin-top: 25px;
-    
+
     @media screen and (min-width: 1024px) {
         margin-top: 0;
         padding: 0 25px;

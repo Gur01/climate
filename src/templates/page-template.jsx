@@ -29,6 +29,6 @@ const StyledNavigation = styled(Navigation)`
     position: fixed;
     top: 0;
     animation: none;
-    background-color: #2C4DC3;
+    background-color: #2c4dc3;
     padding: 10px 0;
-`
+`;

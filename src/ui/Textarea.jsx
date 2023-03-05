@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { ErrorMessage } from './Input';
 
-const Textarea = ({ error, errorMessage = 'Ошибка!', ...rest }) => {
+export const Textarea = ({ error, errorMessage = 'Ошибка!', ...rest }) => {
     return (
         <Box>
             <StyledTextarea {...rest} />
@@ -9,8 +9,6 @@ const Textarea = ({ error, errorMessage = 'Ошибка!', ...rest }) => {
         </Box>
     );
 };
-
-export default Textarea;
 
 const Box = styled.div`
     margin-top: 50px;

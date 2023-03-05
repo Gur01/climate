@@ -1,10 +1,8 @@
 import styled from 'styled-components';
 
-const Button = ({ children, ...props }) => {
+export const Button = ({ children, ...props }) => {
     return <StyledButton {...props}>{children}</StyledButton>;
 };
-
-export default Button;
 
 const StyledButton = styled.button`
     height: 56px;

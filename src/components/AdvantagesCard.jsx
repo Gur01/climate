@@ -22,7 +22,7 @@ const Card = styled.div`
     padding-right: 30px;
     margin-bottom: 36px;
     width: 100%;
-    
+
     @media screen and (min-width: 540px) {
         margin-bottom: 36px;
         width: 50%;

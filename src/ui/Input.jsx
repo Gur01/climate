@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Input = ({ errorMessage, ...rest }) => {
+export const Input = ({ errorMessage, ...rest }) => {
     return (
         <Box>
             <StyledInput type="text" {...rest} />
@@ -8,8 +8,6 @@ const Input = ({ errorMessage, ...rest }) => {
         </Box>
     );
 };
-
-export default Input;
 
 const Box = styled.div`
     margin-top: 50px;

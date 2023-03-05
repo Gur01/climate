@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Modal = ({ open, children }) => {
+export const Modal = ({ open, children }) => {
     return (
         <>
             {open && (
@@ -14,8 +14,6 @@ const Modal = ({ open, children }) => {
         </>
     );
 };
-
-export default Modal;
 
 const Wrapper = styled.div`
     position: fixed;

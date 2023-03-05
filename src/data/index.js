@@ -10,4 +10,3 @@ export { regularService } from './services/regular-service';
 export { seasonService } from './services/season-service';
 export { service } from './services/service';
 export { splitSystems } from './services/split-systems';
-

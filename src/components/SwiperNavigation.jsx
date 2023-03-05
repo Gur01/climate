@@ -44,9 +44,8 @@ const Navigation = styled.div`
             opacity: 0.8;
 
             svg path {
-                stroke: #0F0F10 !important;
+                stroke: #0f0f10 !important;
             }
-
         }
 
         svg path {

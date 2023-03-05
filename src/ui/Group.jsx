@@ -1,14 +1,12 @@
 import styled from 'styled-components';
 
-const Group = ({ children, type = 'vertical', ...props }) => {
+export const Group = ({ children, type = 'vertical', ...props }) => {
     return (
         <StyledGroup type={type} {...props}>
             {children}
         </StyledGroup>
     );
 };
-
-export default Group;
 
 const StyledGroup = styled.div`
     display: flex;

@@ -8,10 +8,7 @@ export const getStaticProps = async () => {
 };
 
 const Cleaning = (props) => {
-    return (
-        <PageTemplate {...props}/>
-    );
+    return <PageTemplate {...props} />;
 };
 
 export default Cleaning;
-

@@ -1,14 +1,12 @@
 import styled from 'styled-components';
 
-const Layout = ({ children, columns = 1, gap = 0, ...props }) => {
+export const Layout = ({ children, columns = 1, gap = 0, ...props }) => {
     return (
         <StyledLayout columns={columns} gap={gap} {...props}>
             {children}
         </StyledLayout>
     );
 };
-
-export default Layout;
 
 const StyledLayout = styled.div`
     width: 100%;

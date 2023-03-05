@@ -8,4 +8,3 @@ export { default as Logo } from './Logo';
 export { default as Menu } from './Menu';
 export { default as ServicesCard } from './ServicesCard';
 export { default as SwiperNavigation } from './SwiperNavigation';
-

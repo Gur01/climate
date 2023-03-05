@@ -1,10 +1,8 @@
 import styled from 'styled-components';
 
-const Section = ({ children, ...props }) => {
+export const Section = ({ children, ...props }) => {
     return <StyledSection {...props}>{children}</StyledSection>;
 };
-
-export default Section;
 
 const StyledSection = styled.section`
     margin-top: 60px;

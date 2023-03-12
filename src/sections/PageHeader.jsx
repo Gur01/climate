@@ -19,4 +19,5 @@ const Background = styled.div`
         `background-image: linear-gradient(to top, rgba(44, 77, 195, 0.3), rgba(44, 77, 195, 0.3)), url(${image})`};
     background-size: cover;
     background-position: center;
+    margin-top: 76px;
 `;

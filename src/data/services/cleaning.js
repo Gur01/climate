@@ -1,6 +1,6 @@
 // cleaning
 const header = {
-    image: '/images/page-image.jpg',
+    image: '/images/page5.jpg',
 };
 
 const content = {

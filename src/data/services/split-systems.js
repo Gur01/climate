@@ -1,6 +1,6 @@
 // split-systems
 const header = {
-    image: '/images/page-image.jpg',
+    image: '/images/page1-split.jpg',
 };
 
 const content = {

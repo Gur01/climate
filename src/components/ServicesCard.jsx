@@ -1,14 +1,16 @@
 import styled from 'styled-components';
 import { Button } from '@/ui';
 
-const ServicesCard = ({ image, title, subTitle, ...rest }) => {
+const ServicesCard = ({ image, title, subTitle, href, ...rest }) => {
     return (
         <Card {...rest}>
-            <img src={image} alt="" />
+            <ImageWrapper>
+                <img src={image} alt="" />
+            </ImageWrapper>
             <TextBlock>
                 <Title>{title}</Title>
                 <Description>{subTitle}</Description>
-                <Button>Подробнее</Button>
+                <Button href={href}>Подробнее</Button>
             </TextBlock>
         </Card>
     );
@@ -44,27 +46,20 @@ const TextBlock = styled.div`
     height: 100%;
 `;
 
+const ImageWrapper = styled.div`
+    height: 230px;
+    width: 100%;
+
+    img {
+        vertical-align: bottom;
+        height: 100%;
+    }
+`
+
 const Card = styled.div`
     height: 100%;
     display: flex;
     flex-direction: column;
-
-    img {
-        vertical-align: bottom;
-        width: 100%;
-    }
-
-    /* &:hover {
-        ${TextBlock} {
-            background-color: #2C4DC3;
-        }
-
-        ${Title} {
-            color: #fff;
-        }
-
-        ${Description} {
-            color: #D5DBF3;
-        }
-    } */
+    overflow: hidden;
+    cursor: grab;
 `;

@@ -37,7 +37,7 @@ const Services = ({ data, noTitle, ...rest }) => {
                     {items.map((item, index) => {
                         return (
                             <SwiperSlide key={index}>
-                                <ServicesCard image={item?.image} title={item?.title} subTitle={item?.subTitle} />
+                                <ServicesCard image={item?.image} title={item?.title} subTitle={item?.subTitle} href={item?.href}/>
                             </SwiperSlide>
                         );
                     })}

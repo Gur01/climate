@@ -1,30 +1,34 @@
 import { Logo } from '@/components';
-import { Container, Layout } from '@/ui';
+import { Container } from '@/ui';
+import { useRouter } from 'next/router';
 import styled from 'styled-components';
 
 const Footer = () => {
+    const router = useRouter();
+
     return (
         <>
             <StyledFooter>
-                <StyledContainer>
+                {/* <StyledContainer>
                     <Layout columns={3}>
                         <Logo />
                     </Layout>
                     <Layout columns={3}>
-                        <ul>
+                        {/* <ul>
                             <li>раздел</li>
                             <li>раздел</li>
                             <li>раздел</li>
                             <li>раздел</li>
                         </ul>
                     </Layout>
-                    <Layout columns={3}>3</Layout>
-                    <Layout columns={3}>4</Layout>
-                </StyledContainer>
+                    <Layout columns={3}></Layout>
+                    <Layout columns={3}></Layout>
+                </StyledContainer> */}
                 <SubFooter>
                     <SubFooterContainer>
                         <Copyright>Copyright © {new Date().getFullYear()}</Copyright>
-                        <Links>Вконтакте</Links>
+                        <Logo onClick={() => router.push('/')} />
+                        {/* <Links>Вконтакте</Links> */}
                     </SubFooterContainer>
                 </SubFooter>
             </StyledFooter>
@@ -57,6 +61,7 @@ const SubFooter = styled.div`
 const SubFooterContainer = styled(Container)`
     display: flex;
     justify-content: space-between;
+    align-items: center;
 `;
 
 const Copyright = styled.div``;

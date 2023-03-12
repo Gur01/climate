@@ -1,4 +1,5 @@
 import { Logo, Menu } from '@/components';
+import { StyledArrowLeft } from '@/components/Menu';
 import { useClickOutside } from '@/hooks/useClickOutside';
 import { Container } from '@/ui';
 import { useRouter } from 'next/router';
@@ -243,6 +244,21 @@ const DesktopMenu = styled(Menu)`
         display: block;
     }
 
+    /* Arrow desktop rotation */
+    > ul {
+        > li {
+            &:hover {
+                ${StyledArrowLeft} {
+                    transform: rotate(90deg);
+                }
+            }
+            > * {
+                padding: 16px;
+
+            }
+        }
+    }
+
     /* vipadashka styles desktop*/
     /* first level */
     > ul {
@@ -252,7 +268,7 @@ const DesktopMenu = styled(Menu)`
             display: inline-block;
             position: relative;
             height: 100%;
-            padding: 16px;
+            /* padding: 16px; */
 
             &:last-child {
                 padding-right: 0;

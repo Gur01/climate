@@ -2,52 +2,60 @@ export const services = {
     title: 'Наши <span>услуги</span>',
     items: [
         {
-            image: '/images/services1.jpg',
+            image: '/images/5.jpg',
             title: 'Сезонное обслуживание',
             subTitle:
                 'Регулярное сезонное обслуживание кондиционера, проводимое профессионалами, поможет обеспечить его эффективную работу и продлить срок его службы.',
+            href: '/services/season-service'
         },
         {
-            image: '/images/services1.jpg',
+            image: '/images/services3.jpg',
             title: 'Регулярное обслуживание',
             subTitle:
                 'Регулярное обслуживание кондиционера не только продлевает его срок службы, но и обеспечивает более чистый и здоровый воздух в помещении.',
+            href: '/services/regular-service'
         },
         {
-            image: '/images/services1.jpg',
+            image: '/images/cleaning3.jpg',
             title: 'Чистка',
             subTitle:
                 'Регулярная чистка кондиционера не только улучшает его производительность, но и уменьшает риск развития бактерий и грибков в помещении.',
+            href: '/services/cleaning'
         },
         {
-            image: '/images/services1.jpg',
+            image: '/images/split.jpg',
             title: 'Обслуживание сплит систем',
             subTitle:
                 'Комплексное обслуживание сплит-систем – залог их бесперебойной работы, оптимальной производительности и увеличения срока эксплуатации.',
-        },
+            href: '/services/split-systems'
+            },
         {
-            image: '/images/services1.jpg',
+            image: '/images/services4.jpg',
             title: 'Ремонт',
             subTitle:
                 'Ремонт кондиционера требуется при возникновении неисправностей, таких как неполадки в компрессоре, утечка хладагента или засорение фильтров.',
-        },
+            href: '/services/service'
+            },
         {
-            image: '/images/services1.jpg',
+            image: '/images/services5.jpg',
             title: 'Монтаж',
             subTitle:
                 'Качественный монтаж кондиционера - залог его долгой и надежной работы, поэтому важно доверить этот процесс профессионалам.',
-        },
+            href: '/services/montag'
+            },
         {
-            image: '/images/services1.jpg',
+            image: '/images/diagnostics.jpg',
             title: 'Диагностика неисправностей',
             subTitle:
                 'Диагностика неисправностей кондиционера позволяет быстро и точно выявить проблему и предоставить рекомендации по ее устранению.',
-        },
+            href: '/services/diagnostics'
+            },
         {
-            image: '/images/services1.jpg',
+            image: '/images/zapravka.jpg',
             title: 'Поиск утечки',
             subTitle:
                 'Мы проводим поиск и устранение утечки фреона в кондиционере, а также производим его качественную заправку.',
-        },
+            href: '/services/poisk-utechki'
+            },
     ],
 };

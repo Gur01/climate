@@ -35,6 +35,8 @@ const Card = styled.div`
 
     img {
         margin-bottom: 30px;
+        width: 40px;
+        height: 40px;
 
         @media screen and (min-width: 1024px) {
             margin-bottom: 55px;

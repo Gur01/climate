@@ -1,5 +1,5 @@
 const header = {
-    image: '/images/page-image.jpg',
+    image: '/images/page-about.jpg',
 };
 
 const content = {

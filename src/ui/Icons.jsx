@@ -12,8 +12,8 @@ export const Profi = () => (
     </svg>
 );
 
-export const ArrowLeft = () => (
-    <svg width="14" height="26" viewBox="0 0 14 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+export const ArrowLeft = ({className}) => (
+    <svg className ={className} width="14" height="26" viewBox="0 0 14 26" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M12 24L1 13L12 2" stroke="white" strokeWidth="2" strokeLinecap="square" strokeLinejoin="round" />
     </svg>
 );

@@ -1,6 +1,6 @@
 // poisk-utechki
 const header = {
-    image: '/images/page-image.jpg',
+    image: '/images/page7.jpg',
 };
 
 const content = {

@@ -1,10 +1,12 @@
-import styled from 'styled-components';
+import Link from 'next/link';
+import styled, { css } from 'styled-components';
 
-export const Button = ({ children, ...props }) => {
-    return <StyledButton {...props}>{children}</StyledButton>;
+export const Button = ({ children, href, ...props }) => {
+
+    return href ? <StyledLink href={href}>{children}</StyledLink> : <StyledButton {...props}>{children}</StyledButton>;
 };
 
-const StyledButton = styled.button`
+const styles = css`
     height: 56px;
     padding: 16px 45px;
     background-color: #ffd337;
@@ -14,4 +16,15 @@ const StyledButton = styled.button`
     font-size: 16px;
     cursor: pointer;
     white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`
+
+const StyledButton = styled.button`
+    ${styles}
+`;
+
+const StyledLink = styled(Link)`
+    ${styles}
 `;

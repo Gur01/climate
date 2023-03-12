@@ -1,8 +1,9 @@
 import { menu } from '@/data/menu';
-import { Link } from '@/ui';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { forwardRef } from 'react';
 import styled from 'styled-components';
+import { ArrowLeft } from '@/ui';
 
 const Menu = forwardRef(({ className }, ref) => {
     const router = useRouter();
@@ -13,7 +14,10 @@ const Menu = forwardRef(({ className }, ref) => {
                 {menu.map((item) => {
                     return item.children ? (
                         <li key={item.id}>
-                            <span>{item.name}</span>
+                            <DropdownItem>
+                                <span>{item.name}</span>
+                                <StyledArrowLeft />
+                            </DropdownItem>
                             <ul>
                                 {item.children.map((innerItem) => {
                                     return (
@@ -43,14 +47,31 @@ const StyledLink = styled.li`
     opacity: ${({ isActive }) => (isActive ? '0.8' : '1')};
 `;
 
+export const StyledArrowLeft = styled(ArrowLeft)`
+    transform: rotate(-90deg);
+    width: 8px;
+    display: inline-block;
+    margin-left: 10px;
+    transition: transform 0.15s ease;
+
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
+`;
+
 const StyledMenu = styled.div`
     /* top: 0;
     right: 0;*/
     /* width: 100%; 
  */
-    ul {
-        li {
-            cursor: pointer;
-        }
+    li {
+        cursor: pointer;
     }
+`;
+
+
+
+const DropdownItem = styled.div`
+    display: flex;
+    align-items: center;
 `;

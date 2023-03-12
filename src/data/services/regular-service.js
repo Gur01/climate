@@ -1,6 +1,6 @@
 // regular-service
 const header = {
-    image: '/images/page-image.jpg',
+    image: '/images/page5-regular.jpg',
 };
 
 const content = {

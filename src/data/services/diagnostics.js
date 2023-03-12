@@ -1,6 +1,6 @@
 // diagnostics
 const header = {
-    image: '/images/page-image.jpg',
+    image: '/images/page4-diagnostic.jpeg',
 };
 
 const content = {

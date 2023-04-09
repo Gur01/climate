@@ -39,11 +39,11 @@ export const menu = [
                 id: 'service',
                 name: 'Ремонт',
             },
-            {
-                path: '/services/montag',
-                id: 'montag',
-                name: 'Монтаж',
-            },
+            // {
+            //     path: '/services/montag',
+            //     id: 'montag',
+            //     name: 'Монтаж',
+            // },
             {
                 path: '/services/diagnostics',
                 id: 'diagnostics',
